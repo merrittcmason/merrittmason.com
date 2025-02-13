@@ -70,20 +70,21 @@ function App() {
         <section id="about" className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className={`w-48 h-48 rounded-full border-4 ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} p-1`}>
-                {/* use the headshot.jpeg file as image */}
-                <img
-                  src="/Headshot.png"
-                  alt="Profile"
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
+            <div className="w-48 h-48 aspect-square rounded-full border-4 p-1
+              shrink-0 flex-none
+              ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}">
+              <img
+                src="Headshot.png"
+                alt="Profile"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
               <div className="md:ml-8 text-center md:text-left">
                 <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                   Hello, I'm Merritt Mason
                 </h2>
                 <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                edicated and detail-oriented Computer Science student with experience in software development, IT support, and leadership roles. Skilled in problem-solving, programming, and working in fast-paced environments. Passionate about technology, software development, and optimizing solutions for efficiency. Seeking opportunities to apply technical skills and gain further industry experience.
+                Dedicated and detail-oriented Computer Science student with experience in software development, IT support, and leadership roles. Skilled in problem-solving, programming, and working in fast-paced environments. Passionate about technology, software development, and optimizing solutions for efficiency. Seeking opportunities to apply technical skills and gain further industry experience.
                 </p>
               </div>
             </div>
@@ -133,11 +134,12 @@ function App() {
             <div className={`max-w-3xl mx-auto p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
               <div className="flex justify-end mb-6">
                 <a
-                  href="#"
+                  href="merrittmason.pdf"
+                  target="merrittmason.pdf"
                   className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                 >
                   <Download size={16} className="mr-2" />
-                  Download PDF
+                  View PDF
                 </a>
               </div>
               <div className={`space-y-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -150,19 +152,19 @@ function App() {
                         <li>AI & Machine Learning: Experience with large language models (LLMs), machine learning (ML), and database programming with SQLite.</li>
                         <li>Databases: Worked with SQLite and other database technologies.</li>
                         <li>Networking & Security: Knowledge of network setup, security fundamentals, and IT infrastructure</li>
-
-
-
+                        <li>Experienced with design and CAD software like Autodesk Inventor and SolidWorks for 3D modeling and technical design</li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Education</h3>
+                  <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Certifications</h3>
                   <div>
-                    <h4 className="font-semibold">BS in Computer Science (In Progress)</h4>
-                    <p className="text-sm">The University of Alabama</p>
-                    <p className="text-sm">Rowan Cabarus Community College</p>
+                    <h4 className="font-semibold">Microsoft Office Specialist (Word, Excel, PowerPoint, Access)</h4>
+                    <h4 className="font-semibold">Autodesk Inventor 3D Certification</h4>
+                    <h4 className="font-semibold">SolidWorks Academic Certification</h4>
+                    <h4 className="font-semibold">CompTIA A+ Core 2 (In Progress)</h4>
+                    <h4 className="font-semibold">IT Technical Support Specialist (In Progress)</h4>
                   </div>
                 </div>
               </div>
