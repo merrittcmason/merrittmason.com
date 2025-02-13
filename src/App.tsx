@@ -134,8 +134,8 @@ function App() {
             <div className={`max-w-3xl mx-auto p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
               <div className="flex justify-end mb-6">
                 <a
-                  href="/public/merrittmason.pdf"
-                  target="/public/merrittmason.pdf"
+                  href="/merrittmason.pdf"
+                  target="_blank"
                   className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                 >
                   <Download size={16} className="mr-2" />
