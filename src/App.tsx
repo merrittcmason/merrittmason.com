@@ -74,7 +74,7 @@ function App() {
               shrink-0 flex-none
               ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}">
               <img
-                src="/public/Headshot.png"
+                src="/Headshot.png"
                 alt="Profile"
                 className="w-full h-full rounded-full object-cover"
               />
@@ -134,7 +134,7 @@ function App() {
             <div className={`max-w-3xl mx-auto p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
               <div className="flex justify-end mb-6">
                 <a
-                  href="/merrittmason.pdf"
+                  href="resume(B).pdf"
                   target="_blank"
                   className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                 >
