@@ -70,21 +70,21 @@ function App() {
         <section id="about" className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-48 h-48 aspect-square rounded-full border-4 p-1
+              <div className="w-48 h-48 aspect-square rounded-full border-4 p-1
               shrink-0 flex-none
               ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}">
-              <img
-                src="/Headshot.png"
-                alt="Profile"
-                className="w-full h-full rounded-full object-cover"
-              />
-            </div>
+                <img
+                  src="/IMG_0344.png"
+                  alt="Profile"
+                  className="w-full h-full rounded-full object-cover"
+                />
+              </div>
               <div className="md:ml-8 text-center md:text-left">
                 <h2 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                   Hello, I'm Merritt Mason
                 </h2>
                 <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Dedicated and detail-oriented Computer Science student with experience in software development, IT support, and leadership roles. Skilled in problem-solving, programming, and working in fast-paced environments. Passionate about technology, software development, and optimizing solutions for efficiency. Seeking opportunities to apply technical skills and gain further industry experience.
+                  Dedicated and detail-oriented Computer Science student with experience in software development, IT support, and leadership roles. Skilled in problem-solving, programming, and working in fast-paced environments. Passionate about technology, software development, and optimizing solutions for efficiency. Seeking opportunities to apply technical skills and gain further industry experience.
                 </p>
               </div>
             </div>
@@ -98,23 +98,44 @@ function App() {
               Featured Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3].map((project) => (
-                <div key={project} className={`rounded-lg shadow-lg overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-white'}`}>
+              {[
+                {
+                  title: "Poker Game (Java)",
+                  description: "A classic casino simulation built in Java. It deals a hand, lets you hold or replace cards, and scores your hand using standard poker rules.",
+                  imageUrl: "https://images.unsplash.com/photo-1597042962047-005b63a5eb25?q=80&w=2556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  link: "https://github.com/merrittcmason/Poker-Project/tree/main"
+                },
+                {
+                  title: "Project Two",
+                  description: "A brief description for project two and the technologies used.",
+                  imageUrl: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&w=600",
+                  link: "https://github.com/yourusername/project-two"
+                },
+                {
+                  title: "Project Three",
+                  description: "A brief description for project three and the technologies used.",
+                  imageUrl: "https://images.unsplash.com/photo-1517430816045-df4b7de01f1d?ixlib=rb-4.0.3&w=600",
+                  link: "https://github.com/yourusername/project-three"
+                }
+              ].map((project, index) => (
+                <div key={index} className={`rounded-lg shadow-lg overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-white'}`}>
                   <img
-                    src={`https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&w=600`}
-                    alt={`Project ${project}`}
+                    src={project.imageUrl}
+                    alt={project.title}
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6">
                     <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                      Project {project}
+                      {project.title}
                     </h3>
                     <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      A brief description of the project and the technologies used.
+                      {project.description}
                     </p>
                     <a
-                      href="#"
+                      href={project.link}
                       className="inline-flex items-center text-blue-500 hover:text-blue-600"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       View Project <ExternalLink size={16} className="ml-1" />
                     </a>
