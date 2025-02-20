@@ -106,10 +106,10 @@ function App() {
                   link: "https://github.com/merrittcmason/Poker-Project/tree/main"
                 },
                 {
-                  title: "Project Two",
-                  description: "A brief description for project two and the technologies used.",
-                  imageUrl: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&w=600",
-                  link: "https://github.com/yourusername/project-two"
+                  title: "Password Generator",
+                  description: "Password Generator is a desktop app that creates secure, customizable passwords and integrates with 1Password for seamless password management.",
+                  imageUrl: "https://images.unsplash.com/photo-1633265486064-086b219458ec?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  link: "https://github.com/merrittcmason/Password-Generator"
                 },
                 {
                   title: "Project Three",
