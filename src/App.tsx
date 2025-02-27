@@ -76,7 +76,7 @@ function App() {
                 <img
                   src="/IMG_0344.png"
                   alt="Profile"
-                  className="w-full h-full rounded-full object-fill"
+                  className="w-full h-full rounded-full object-cover"
                 />
               </div>
               <div className="md:ml-8 text-center md:text-left">
