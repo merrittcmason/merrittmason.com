@@ -84,7 +84,7 @@ function App() {
                   Hello, I'm Merritt Mason
                 </h2>
                 <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                  Dedicated and detail-oriented Computer Science student with experience in software development, IT support, and leadership roles. Skilled in problem-solving, programming, and working in fast-paced environments. Passionate about technology, software development, and optimizing solutions for efficiency. Seeking opportunities to apply technical skills and gain further industry experience.
+                  I’m a full-time Computer Science student with a strong passion for technology, software development, and hands-on problem-solving. While managing school full-time, I’ve also worked part-time in leadership roles, balancing responsibilities and gaining real-world experience along the way. From building custom PCs and configuring servers to developing web apps, working with AI tools, and designing with CAD software—I’m always eager to learn and create. I’m currently focused on growing my skills in areas like cybersecurity, machine learning, and full-stack development, and I’m excited to keep building tools that will challenge and help me to grow as a developer.
                 </p>
               </div>
             </div>
@@ -111,12 +111,12 @@ function App() {
                   imageUrl: "https://images.unsplash.com/photo-1633265486064-086b219458ec?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                   link: "https://github.com/merrittcmason/Password-Generator"
                 },
-                {
+/*                {
                   title: "Project Three",
                   description: "A brief description for project three and the technologies used.",
                   imageUrl: "https://images.unsplash.com/photo-1517430816045-df4b7de01f1d?ixlib=rb-4.0.3&w=600",
                   link: "https://github.com/yourusername/project-three"
-                }
+                } */
               ].map((project, index) => (
                 <div key={index} className={`rounded-lg shadow-lg overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-white'}`}>
                   <img
@@ -155,7 +155,7 @@ function App() {
             <div className={`max-w-3xl mx-auto p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
               <div className="flex justify-end mb-6">
                 <a
-                  href="coding resume.pdf"
+                  href="coding resume2.pdf"
                   target="_blank"
                   className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
                 >
@@ -168,12 +168,17 @@ function App() {
                   <h3 className={`text-xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Experience</h3>
                   <div className="space-y-4">
                     <div>
-                      <ul className="list-disc list-inside mt-2">
-                        <li>Programming Languages: Proficient in Java, C, Python, C++, HTML, and CSS</li>
-                        <li>AI & Machine Learning: Experience with large language models (LLMs), machine learning (ML), and database programming with SQLite.</li>
-                        <li>Databases: Worked with SQLite and other database technologies.</li>
-                        <li>Networking & Security: Knowledge of network setup, security fundamentals, and IT infrastructure</li>
-                        <li>Experienced with design and CAD software like Autodesk Inventor and SolidWorks for 3D modeling and technical design</li>
+                      <ul className="list-disc list-outside pl-5 mt-2 space-y-2">
+                        <li>Programming Languages: Proficient in Python, Java, JavaScript, TypeScript, C, C++, HTML, CSS, SQL, and React</li>
+                        <li>Web Development: Experience building full-stack web applications with React, Tailwind CSS, TypeScript, and Node.js</li>
+                        <li>AI & Machine Learning: Created facial recognition software, worked with LLMs, and developed intelligent tools using Python</li>
+                        <li>Databases: Worked with SQLite and SQL-based systems for local and web-integrated apps</li>
+                        <li>Networking & Security: Knowledge of network setup, IT infrastructure, ethical hacking, and security protocols (Kali Linux)</li>
+                        <li>Cybersecurity: Familiar with penetration testing tools and practices, basic forensics, and system hardening techniques</li>
+                        <li>Operating Systems: Experienced across Windows, macOS, Linux distributions, and Kali Linux for security work</li>
+                        <li>Hardware: Built custom computers, managed component upgrades, and configured personal NAS servers</li>
+                        <li>CAD & Technical Design: Skilled in Autodesk Inventor and SolidWorks for 3D modeling, part assemblies, and prototypes</li>
+                        <li>Projects: Developed applications like a calendar event creator, password generator, Java-based games, and more (see GitHub)</li>
                       </ul>
                     </div>
                   </div>
