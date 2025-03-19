@@ -206,7 +206,7 @@ function App() {
             </h2>
             <div className="flex justify-center space-x-8">
               <a
-                href="merrittcmason@gmail.com"
+                href="contact@merrittmason.com"
                 className={`flex items-center ${isDarkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
               >
                 <Mail size={24} className="mr-2" />
