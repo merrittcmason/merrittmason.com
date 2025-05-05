@@ -84,7 +84,19 @@ function App() {
                   Hello, I'm Merritt Mason
                 </h2>
                 <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                  I’m a full-time Computer Science student with a strong passion for technology, software development, and hands-on problem-solving. While managing school full-time, I’ve also worked part-time in leadership roles, balancing responsibilities and gaining real-world experience along the way. From building custom PCs and configuring servers to developing web apps, working with AI tools, and designing with CAD software—I’m always eager to learn and create. I’m currently focused on growing my skills in areas like cybersecurity, machine learning, and full-stack development, and I’m excited to keep building tools that will challenge and help me to grow as a developer.
+                Driven and adaptable programmer with a strong foundation in
+software development, AI, and systems design. Proficient in Python,
+Java, JavaScript, TypeScript, C, C++, SQL, HTML/CSS, and React, with
+hands-on experience building full-stack web applications, creating
+facial recognition software, and working with large language models.
+While managing full-time college coursework, I’ve also held part-time
+leadership roles, balancing academics with practical experience—from
+building custom PCs and configuring servers to developing tools in
+cybersecurity and machine learning. I bring a proactive mindset, a
+hunger to learn, and a focus on building real, useful software.
+Currently expanding skills in full-stack development, AI systems, and
+cybersecurity, and always looking for challenges that push my growth
+as a developer.
                 </p>
               </div>
             </div>
