@@ -165,7 +165,7 @@ as a developer.
               Resume
             </h2>
             <div className={`max-w-3xl mx-auto p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
-              <div className="flex justify-start mb-6">
+              <div className="flex justify-center mb-6">
                 <a
                   href="mm_resumeC.pdf"
                   target="_blank"
