@@ -141,28 +141,115 @@ function App() {
         </section>
 
         {/* Resume Section */}
-        <section id="resume" className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className={`text-3xl font-bold mb-12 text-center ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Resume
-            </h2>
-            <div className={`max-w-3xl mx-auto p-8 rounded-lg shadow-lg ${isDarkMode ? 'bg-[#2e2e2e]' : 'bg-white'}`}>
-              <div className="flex justify-center mb-6">
-                <a
-                  href="mm_resumeC.pdf"
-                  target="_blank"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-                >
-                  <Download size={16} className="mr-2" />
-                  View PDF
-                </a>
-              </div>
-              <div className={`space-y-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                {/* ...experience and certifications */}
-              </div>
-            </div>
+        <section
+  id="resume"
+  className={`py-20 ${isDarkMode ? 'bg-[#121212]' : 'bg-white'}`}
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2
+      className={`text-3xl font-bold mb-12 text-center ${
+        isDarkMode ? 'text-white' : 'text-gray-900'
+      }`}
+    >
+      Resume
+    </h2>
+    <div
+      className={`max-w-3xl mx-auto p-8 rounded-lg shadow-lg ${
+        isDarkMode ? 'bg-[#2e2e2e]' : 'bg-white'
+      }`}
+    >
+      <div className="flex justify-center mb-6">
+        <a
+          href="mm_resumeC.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
+        >
+          <Download size={16} className="mr-2" />
+          View PDF
+        </a>
+      </div>
+
+      <div className={`space-y-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+        <div>
+          <h3
+            className={`text-xl font-bold mb-2 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}
+          >
+            Experience
+          </h3>
+          <ul className="list-disc list-outside pl-5 mt-2 space-y-2">
+            <li>
+              Programming Languages: Proficient in Python, Java, JavaScript,
+              TypeScript, C, C++, HTML, CSS, SQL, and React
+            </li>
+            <li>
+              Web Development: Experience building full-stack web applications
+              with React, Tailwind CSS, TypeScript, and Node.js
+            </li>
+            <li>
+              AI & Machine Learning: Created facial recognition software, worked
+              with LLMs, and developed intelligent tools using Python
+            </li>
+            <li>
+              Databases: Worked with SQLite and SQL-based systems for local and
+              web-integrated apps
+            </li>
+            <li>
+              Networking & Security: Knowledge of network setup, IT
+              infrastructure, ethical hacking, and security protocols (Kali
+              Linux)
+            </li>
+            <li>
+              Cybersecurity: Familiar with penetration testing tools and
+              practices, basic forensics, and system hardening techniques
+            </li>
+            <li>
+              Operating Systems: Experienced across Windows, macOS, Linux
+              distributions, and Kali Linux for security work
+            </li>
+            <li>
+              Hardware: Built custom computers, managed component upgrades, and
+              configured personal NAS servers
+            </li>
+            <li>
+              CAD & Technical Design: Skilled in Autodesk Inventor and
+              SolidWorks for 3D modeling, part assemblies, and prototypes
+            </li>
+            <li>
+              Projects: Developed applications like a calendar event creator,
+              password generator, Java-based games, and more (see GitHub)
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3
+            className={`text-xl font-bold mb-2 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}
+          >
+            Certifications
+          </h3>
+          <div className="space-y-1">
+            <h4 className="font-semibold">
+              Microsoft Office Specialist (Word, Excel, PowerPoint, Access)
+            </h4>
+            <h4 className="font-semibold">
+              Autodesk Inventor 3D Certification
+            </h4>
+            <h4 className="font-semibold">
+              SolidWorks Academic Certification
+            </h4>
+            <h4 className="font-semibold">CompTIA A+ Core 2 (In Progress)</h4>
+            <h4 className="font-semibold">IT Technical Support Specialist (In Progress)</h4>
           </div>
-        </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Contact Section */}
         <section id="contact" className={`py-20 ${isDarkMode ? 'bg-[#2e2e2e]' : 'bg-white'}`}>
