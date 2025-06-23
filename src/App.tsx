@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Moon, Sun, Github, Linkedin, Mail, Download, ExternalLink } from 'lucide-react';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -306,6 +306,7 @@ function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
