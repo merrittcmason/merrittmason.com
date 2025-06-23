@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Moon, Sun, Github, Linkedin, Mail, Download, ExternalLink } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
