@@ -114,6 +114,12 @@ function App() {
                   imageUrl: "https://images.unsplash.com/photo-1633265486064-086b219458ec?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8A==",
                   link: "https://github.com/merrittcmason/Password-Generator"
                 },
+                                {
+                  title: "Basic Chatbot",
+                  description: "A Chatbot is just what you need to level up your website/application! Fully customizeable and easy to navigate. Follow the steps included in this repository to implement your very own.",
+                  imageUrl: "https://images.unsplash.com/photo-1659018966820-de07c94e0d01?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  link: "https://github.com/merrittcmason/Basic-React-Chatbot.git"
+                },
               ].map((project, index) => (
                 <div key={index} className={`rounded-lg shadow-lg overflow-hidden ${isDarkMode ? 'bg-[#2e2e2e]' : 'bg-white'}`}>
                   <img
