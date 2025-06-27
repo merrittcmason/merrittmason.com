@@ -254,7 +254,7 @@ function App() {
             Certifications
           </h3>
             <li>
-              Microsoft Office Specialist (Word, Excel, PowerPoint, Access)
+              Microsoft Word, Excel, PowerPoint, and Access
             </li>
             <li>
               Autodesk Inventor 3D Certification
