@@ -102,6 +102,18 @@ function App() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
+                                {
+                  title: "Meeting Pair AI",
+                  description: "Meeting Pair AI is a local tool that transcribes meetings in real time and generates clear, AI-powered notes using Whisper and Ollama.",
+                  imageUrl: "https://plus.unsplash.com/premium_photo-1683121718643-fb18d2668d53?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  link: "https://github.com/merrittcmason/Meeting-Pair-AI.git"
+                },
+                {
+                  title: "Smart Bus",
+                  description: "Smart Bus is an AI-powered automation platform that uses intelligent agents to help businesses manage marketing, finance, inventory, and team operations with minimal setup.",
+                  imageUrl: "https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?q=80&w=996&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  link: "https://github.com/merrittcmason/Smart-Bus.git"
+                },
                 {
                   title: "Poker Game (Java)",
                   description: "A classic casino simulation built in Java. It deals a hand, lets you hold or replace cards, and scores your hand using standard poker rules.",
@@ -241,19 +253,21 @@ function App() {
           >
             Certifications
           </h3>
-          <div className="space-y-1">
-            <h4 className="font-semibold">
+            <li>
               Microsoft Office Specialist (Word, Excel, PowerPoint, Access)
-            </h4>
-            <h4 className="font-semibold">
+            </li>
+            <li>
               Autodesk Inventor 3D Certification
-            </h4>
-            <h4 className="font-semibold">
+            </li>
+            <li>
               SolidWorks Academic Certification
-            </h4>
-            <h4 className="font-semibold">CompTIA A+ Core 2 (In Progress)</h4>
-            <h4 className="font-semibold">IT Technical Support Specialist (In Progress)</h4>
-          </div>
+            </li>
+            <li>
+              CompTIA A+ Core 2 (In Progress)
+            </li>
+            <li>
+              IT Technical Support Specialist (In Progress)
+            </li>
         </div>
       </div>
     </div>
