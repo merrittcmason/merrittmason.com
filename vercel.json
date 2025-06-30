@@ -6,6 +6,11 @@
       "permanent": true
     },
     {
+        "source": "/mm_resumeC.pdf",
+        "destination": "/merritt_mason_resume.pdf",
+        "permanent": true
+    },
+    {
       "source": "/resume",
       "destination": "/merritt_mason_resume.pdf",
       "permanent": true
