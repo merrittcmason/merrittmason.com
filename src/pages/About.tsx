@@ -10,31 +10,47 @@ export const About: React.FC = () => {
     {
       icon: <Code className="w-6 h-6" />,
       title: "Programming Languages",
-      items: ["Python", "Java", "JavaScript", "TypeScript", "C/C++", "HTML/CSS", "SQL"]
+      items: [
+        "Python", "Java / JavaScript / Typescript", "C / C++/ C#",
+        "Rails / Ruby on Rails", "SQL", "React"
+      ]
     },
     {
       icon: <Database className="w-6 h-6" />,
-      title: "Web Development",
-      items: ["React", "Node.js", "Tailwind CSS", "Full-Stack Development"]
+      title: "Application Development",
+      items: [
+        "Full-Stack Development", "iOS/Swift Development",
+        "Automation & Web Scraping", "API Integration"
+      ]
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Cybersecurity",
-      items: ["Penetration Testing", "Kali Linux", "Network Security", "Ethical Hacking"]
+      title: "Cybersecurity & Networking",
+      items: [
+        "Penetration Testing", "Kali Linux",
+        "Network Security", "Ethical Hacking",
+        "System Hardening"
+      ]
     },
     {
       icon: <Wrench className="w-6 h-6" />,
-      title: "Technical Skills",
-      items: ["CAD Design", "Hardware Assembly", "System Administration", "AI/ML"]
+      title: "Technical & AI Skills",
+      items: [
+        "AI/ML Model Training", "Prompt Engineering",
+        "CAD Design", "Hardware Assembly",
+        "System Administration"
+      ]
     }
   ];
 
   const certifications = [
+    "IT Database Administrator Certification",
+    "IT Essentials Certification",
     "Microsoft Office Suite Certification",
-    "Autodesk Inventor 3D Certification",
-    "SolidWorks Academic Certification",
     "CompTIA A+ Core 2 (In Progress)",
-    "IT Technical Support Specialist (In Progress)"
+    "IT Technical Support Specialist (In Progress)",
+    "Autodesk Inventor 3D Certification",
+    "SolidWorks Academic Certification"
   ];
 
   return (
@@ -82,7 +98,7 @@ export const About: React.FC = () => {
                   Merritt Mason
                 </span>
               </motion.h1>
-              
+
               <motion.p
                 className={`text-xl lg:text-2xl mb-8 leading-relaxed ${
                   isDarkMode ? 'text-gray-300' : 'text-gray-600'
@@ -91,10 +107,10 @@ export const About: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Computer Science & Information Technology Student with expertise in 
-                full-stack development, cybersecurity, and AI/ML technologies. 
-                Passionate about creating innovative solutions and building secure, 
-                scalable applications.
+                I'm a student currently studying Computer Science and Information Technology. This has given me
+                the ability to develop my skills showcased in my
+                portfolio. Notably software/application development, IT, and AI Technologies
+
               </motion.p>
 
               <motion.div
@@ -114,12 +130,12 @@ export const About: React.FC = () => {
                   <Download size={20} className="mr-2" />
                   Download Resume
                 </motion.a>
-                
+
                 <motion.a
                   href="#skills"
                   className={`inline-flex items-center px-8 py-4 border-2 border-crimson font-semibold rounded-lg transition-all duration-300 ${
-                    isDarkMode 
-                      ? 'text-crimson hover:bg-crimson hover:text-white' 
+                    isDarkMode
+                      ? 'text-crimson hover:bg-crimson hover:text-white'
                       : 'text-crimson hover:bg-crimson hover:text-white'
                   }`}
                   whileHover={{ scale: 1.05, y: -2 }}
@@ -144,10 +160,10 @@ export const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Technical Expertise
+              My Experience
             </h2>
             <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Comprehensive skills across multiple domains of technology
+              Strong skills across multiple fields in technology and hardware
             </p>
           </motion.div>
 
