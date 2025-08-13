@@ -24,7 +24,7 @@ export const Navigation: React.FC = () => {
       animate={{ y: 0 }}
       className={`fixed w-full z-50 backdrop-blur-md border-b transition-all duration-300 ${
         isDarkMode 
-          ? 'bg-gray-900/90 border-gray-700' 
+          ? 'bg-black/90 border-gray-800' 
           : 'bg-white/90 border-gray-200'
       }`}
     >
@@ -35,7 +35,7 @@ export const Navigation: React.FC = () => {
             whileHover={{ scale: 1.05 }}
           >
             <Link to="/">
-              <h1 className={`text-xl font-bold bg-gradient-to-r from-crimson to-silver bg-clip-text text-transparent`}>
+              <h1 className={`text-xl font-bold text-crimson`}>
                 Merritt Mason
               </h1>
             </Link>
@@ -51,7 +51,7 @@ export const Navigation: React.FC = () => {
                   isActive(item.path)
                     ? 'text-crimson'
                     : isDarkMode 
-                      ? 'text-gray-300 hover:text-white' 
+                      ? 'text-gray-400 hover:text-white' 
                       : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -72,7 +72,7 @@ export const Navigation: React.FC = () => {
               onClick={toggleTheme}
               className={`p-2 rounded-lg transition-colors ${
                 isDarkMode 
-                  ? 'text-gray-300 hover:text-white hover:bg-gray-800' 
+                  ? 'text-gray-400 hover:text-white hover:bg-gray-900' 
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
               }`}
             >
@@ -88,7 +88,7 @@ export const Navigation: React.FC = () => {
               onClick={toggleTheme}
               className={`p-2 rounded-lg ${
                 isDarkMode 
-                  ? 'text-gray-300 hover:text-white' 
+                  ? 'text-gray-400 hover:text-white' 
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -100,7 +100,7 @@ export const Navigation: React.FC = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`p-2 rounded-lg ${
                 isDarkMode 
-                  ? 'text-gray-300 hover:text-white' 
+                  ? 'text-gray-400 hover:text-white' 
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -120,7 +120,7 @@ export const Navigation: React.FC = () => {
             className="md:hidden"
           >
             <div className={`px-2 pt-2 pb-3 space-y-1 ${
-              isDarkMode ? 'bg-gray-900/95' : 'bg-white/95'
+              isDarkMode ? 'bg-black/95' : 'bg-white/95'
             }`}>
               {navItems.map((item) => (
                 <Link
@@ -131,7 +131,7 @@ export const Navigation: React.FC = () => {
                     isActive(item.path)
                       ? 'text-crimson bg-crimson/10'
                       : isDarkMode 
-                        ? 'text-gray-300 hover:text-white hover:bg-gray-800' 
+                        ? 'text-gray-400 hover:text-white hover:bg-gray-900' 
                         : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >

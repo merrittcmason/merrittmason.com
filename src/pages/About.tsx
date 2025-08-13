@@ -38,7 +38,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
       {/* Hero Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,18 +54,13 @@ export const About: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-crimson to-silver p-1">
+              <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-crimson">
                 <img
                   src="/darkshot1.jpg"
                   alt="Merritt Mason"
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
-              <motion.div
-                className="absolute -inset-4 rounded-full bg-gradient-to-r from-crimson/20 to-silver/20 blur-xl"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
             </motion.div>
 
             <motion.div
@@ -83,7 +78,7 @@ export const About: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 Hello, I'm{' '}
-                <span className="bg-gradient-to-r from-crimson to-silver bg-clip-text text-transparent">
+                <span className="text-crimson">
                   Merritt Mason
                 </span>
               </motion.h1>
@@ -112,7 +107,7 @@ export const About: React.FC = () => {
                   href="/merritt_mason_resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-crimson to-crimson/80 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 bg-crimson text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -122,10 +117,10 @@ export const About: React.FC = () => {
                 
                 <motion.a
                   href="#skills"
-                  className={`inline-flex items-center px-8 py-4 border-2 border-silver font-semibold rounded-lg transition-all duration-300 ${
+                  className={`inline-flex items-center px-8 py-4 border-2 border-crimson font-semibold rounded-lg transition-all duration-300 ${
                     isDarkMode 
-                      ? 'text-silver hover:bg-silver hover:text-gray-900' 
-                      : 'text-silver hover:bg-silver hover:text-white'
+                      ? 'text-crimson hover:bg-crimson hover:text-white' 
+                      : 'text-crimson hover:bg-crimson hover:text-white'
                   }`}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -139,7 +134,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className={`py-20 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+      <section id="skills" className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -166,11 +161,11 @@ export const About: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 className={`p-6 rounded-xl shadow-lg transition-all duration-300 ${
-                  isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="flex items-center mb-4">
-                  <div className="p-3 bg-gradient-to-r from-crimson to-silver rounded-lg text-white mr-3">
+                  <div className="p-3 bg-crimson rounded-lg text-white mr-3">
                     {skill.icon}
                   </div>
                   <h3 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
@@ -194,7 +189,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Certifications Section */}
-      <section className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -217,7 +212,7 @@ export const About: React.FC = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`p-6 rounded-lg border-l-4 border-crimson ${
-                  isDarkMode ? 'bg-gray-800' : 'bg-white'
+                  isDarkMode ? 'bg-gray-900' : 'bg-white'
                 } shadow-lg`}
               >
                 <p className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>

@@ -131,7 +131,7 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
       {/* Header */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +152,7 @@ export const Testimonials: React.FC = () => {
       </section>
 
       {/* Testimonials Grid */}
-      <section className={`py-20 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -164,11 +164,11 @@ export const Testimonials: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
                 className={`p-6 rounded-xl shadow-lg transition-all duration-300 ${
-                  isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-white'
+                 isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-crimson to-silver rounded-full flex items-center justify-center text-white font-bold mr-4">
+                 <div className="w-12 h-12 bg-crimson rounded-full flex items-center justify-center text-white font-bold mr-4">
                     <User size={20} />
                   </div>
                   <div>
@@ -189,10 +189,6 @@ export const Testimonials: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex mb-3">
-                  {renderStars(testimonial.rating)}
-                </div>
-
                 <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                   "{testimonial.testimonial}"
                 </p>
@@ -211,7 +207,7 @@ export const Testimonials: React.FC = () => {
       </section>
 
       {/* Write a Review Form */}
-      <section className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -234,7 +230,7 @@ export const Testimonials: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className={`p-8 rounded-xl shadow-lg ${
-              isDarkMode ? 'bg-gray-800' : 'bg-white'
+              isDarkMode ? 'bg-gray-900' : 'bg-white'
             }`}
           >
             {showSuccess && (
@@ -263,7 +259,7 @@ export const Testimonials: React.FC = () => {
                     errors.name
                       ? 'border-red-500 focus:border-red-500'
                       : isDarkMode
-                        ? 'border-gray-600 bg-gray-700 text-white focus:border-crimson'
+                        ? 'border-gray-700 bg-gray-800 text-white focus:border-crimson'
                         : 'border-gray-300 bg-white text-gray-900 focus:border-crimson'
                   } focus:outline-none focus:ring-2 focus:ring-crimson/20`}
                   placeholder="Your full name"
@@ -288,7 +284,7 @@ export const Testimonials: React.FC = () => {
                     errors.website
                       ? 'border-red-500 focus:border-red-500'
                       : isDarkMode
-                        ? 'border-gray-600 bg-gray-700 text-white focus:border-crimson'
+                       ? 'border-gray-700 bg-gray-800 text-white focus:border-crimson'
                         : 'border-gray-300 bg-white text-gray-900 focus:border-crimson'
                   } focus:outline-none focus:ring-2 focus:ring-crimson/20`}
                   placeholder="https://yourwebsite.com"
@@ -314,7 +310,7 @@ export const Testimonials: React.FC = () => {
                     errors.testimonial
                       ? 'border-red-500 focus:border-red-500'
                       : isDarkMode
-                        ? 'border-gray-600 bg-gray-700 text-white focus:border-crimson'
+                       ? 'border-gray-700 bg-gray-800 text-white focus:border-crimson'
                         : 'border-gray-300 bg-white text-gray-900 focus:border-crimson'
                   } focus:outline-none focus:ring-2 focus:ring-crimson/20`}
                   placeholder="Share your experience working with me..."
@@ -328,7 +324,7 @@ export const Testimonials: React.FC = () => {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-8 py-4 bg-gradient-to-r from-crimson to-crimson/80 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                className="w-full px-8 py-4 bg-crimson text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
               >
                 <MessageSquare size={20} className="mr-2" />
                 Submit Review

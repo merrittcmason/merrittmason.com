@@ -79,7 +79,7 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
       {/* Featured Projects Carousel */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,7 +107,7 @@ export const Projects: React.FC = () => {
                   exit={{ opacity: 0, x: -300 }}
                   transition={{ duration: 0.5 }}
                   className={`relative h-96 lg:h-[500px] ${
-                    isDarkMode ? 'bg-gray-800' : 'bg-white'
+                    isDarkMode ? 'bg-gray-900' : 'bg-white'
                   } rounded-2xl shadow-2xl overflow-hidden`}
                 >
                   <div className="flex h-full">
@@ -143,7 +143,7 @@ export const Projects: React.FC = () => {
                         {featuredProjects[currentSlide].technologies.map((tech, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1 bg-gradient-to-r from-crimson to-silver text-white text-sm rounded-full"
+                            className="px-3 py-1 bg-crimson text-white text-sm rounded-full"
                           >
                             {tech}
                           </span>
@@ -160,7 +160,7 @@ export const Projects: React.FC = () => {
                           href={featuredProjects[currentSlide].github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-crimson to-crimson/80 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                          className="inline-flex items-center px-6 py-3 bg-crimson text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
                         >
                           <Github size={20} className="mr-2" />
                           View Code
@@ -185,7 +185,7 @@ export const Projects: React.FC = () => {
             <button
               onClick={prevSlide}
               className={`absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full ${
-                isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
+                isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
               } shadow-lg hover:shadow-xl transition-all duration-300`}
             >
               <ChevronLeft size={24} />
@@ -194,7 +194,7 @@ export const Projects: React.FC = () => {
             <button
               onClick={nextSlide}
               className={`absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full ${
-                isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'
+                isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
               } shadow-lg hover:shadow-xl transition-all duration-300`}
             >
               <ChevronRight size={24} />
@@ -217,7 +217,7 @@ export const Projects: React.FC = () => {
       </section>
 
       {/* All Projects Grid */}
-      <section className={`py-20 ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -244,7 +244,7 @@ export const Projects: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 className={`rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${
-                  isDarkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="relative overflow-hidden">
@@ -269,9 +269,7 @@ export const Projects: React.FC = () => {
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className={`px-2 py-1 text-xs rounded-full ${
-                          isDarkMode ? 'bg-gray-600 text-gray-300' : 'bg-gray-200 text-gray-700'
-                        }`}
+                        className="px-2 py-1 text-xs rounded-full bg-crimson text-white"
                       >
                         {tech}
                       </span>
@@ -283,17 +281,21 @@ export const Projects: React.FC = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-crimson hover:text-crimson/80 font-medium transition-colors"
+                      className="inline-flex items-center px-4 py-2 bg-crimson text-white font-medium rounded-lg hover:bg-crimson/80 transition-colors"
                     >
                       <Github size={16} className="mr-1" />
-                      Code
+                      View Code
                     </a>
                     {project.demo && (
                       <a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-silver hover:text-silver/80 font-medium transition-colors"
+                        className={`inline-flex items-center px-4 py-2 border-2 border-crimson font-medium rounded-lg transition-colors ${
+                          isDarkMode 
+                            ? 'text-crimson hover:bg-crimson hover:text-white' 
+                            : 'text-crimson hover:bg-crimson hover:text-white'
+                        }`}
                       >
                         <ExternalLink size={16} className="mr-1" />
                         Demo
