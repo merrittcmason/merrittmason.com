@@ -5,11 +5,10 @@ import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { About } from './pages/About';
 import { Projects } from './pages/Projects';
-// import { Testimonials } from './pages/Testimonials'; // unused; remove or add a route for it
+// import { Testimonials } from './pages/Testimonials';
 import { Contact } from './pages/Contact';
 import { ThemeProvider } from './context/ThemeContext';
 
-// Inline helper: no new file needed
 function ScrollToTop() {
   const { pathname, hash, key } = useLocation();
 
