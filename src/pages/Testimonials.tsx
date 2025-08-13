@@ -58,7 +58,7 @@ export const Testimonials: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -67,21 +67,21 @@ export const Testimonials: React.FC = () => {
 
   const validateForm = () => {
     const newErrors: {[key: string]: string} = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
-    
+
     if (!formData.testimonial.trim()) {
       newErrors.testimonial = 'Testimonial is required';
     } else if (formData.testimonial.length > 500) {
       newErrors.testimonial = 'Testimonial must be 500 characters or less';
     }
-    
+
     if (formData.website && !isValidUrl(formData.website)) {
       newErrors.website = 'Please enter a valid URL';
     }
-    
+
     return newErrors;
   };
 
@@ -96,7 +96,7 @@ export const Testimonials: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -116,7 +116,7 @@ export const Testimonials: React.FC = () => {
     setTestimonials(prev => [newTestimonial, ...prev]);
     setFormData({ name: '', website: '', testimonial: '' });
     setShowSuccess(true);
-    
+
     setTimeout(() => setShowSuccess(false), 3000);
   };
 

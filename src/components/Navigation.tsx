@@ -12,7 +12,7 @@ export const Navigation: React.FC = () => {
   const navItems = [
     { path: '/', label: 'About' },
     { path: '/projects', label: 'Projects' },
-    { path: '/testimonials', label: 'Testimonials' },
+    //{ path: '/testimonials', label: 'Testimonials' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -23,14 +23,14 @@ export const Navigation: React.FC = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 backdrop-blur-md border-b transition-all duration-300 ${
-        isDarkMode 
-          ? 'bg-black/90 border-gray-800' 
+        isDarkMode
+          ? 'bg-black/90 border-gray-800'
           : 'bg-white/90 border-gray-200'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <motion.div 
+          <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
@@ -50,8 +50,8 @@ export const Navigation: React.FC = () => {
                 className={`relative px-3 py-2 rounded-lg transition-all duration-300 ${
                   isActive(item.path)
                     ? 'text-crimson'
-                    : isDarkMode 
-                      ? 'text-gray-400 hover:text-white' 
+                    : isDarkMode
+                      ? 'text-gray-400 hover:text-white'
                       : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -71,8 +71,8 @@ export const Navigation: React.FC = () => {
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
               className={`p-2 rounded-lg transition-colors ${
-                isDarkMode 
-                  ? 'text-gray-400 hover:text-white hover:bg-gray-900' 
+                isDarkMode
+                  ? 'text-gray-400 hover:text-white hover:bg-gray-900'
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
               }`}
             >
@@ -87,8 +87,8 @@ export const Navigation: React.FC = () => {
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
               className={`p-2 rounded-lg ${
-                isDarkMode 
-                  ? 'text-gray-400 hover:text-white' 
+                isDarkMode
+                  ? 'text-gray-400 hover:text-white'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -99,8 +99,8 @@ export const Navigation: React.FC = () => {
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`p-2 rounded-lg ${
-                isDarkMode 
-                  ? 'text-gray-400 hover:text-white' 
+                isDarkMode
+                  ? 'text-gray-400 hover:text-white'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -130,8 +130,8 @@ export const Navigation: React.FC = () => {
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                     isActive(item.path)
                       ? 'text-crimson bg-crimson/10'
-                      : isDarkMode 
-                        ? 'text-gray-400 hover:text-white hover:bg-gray-900' 
+                      : isDarkMode
+                        ? 'text-gray-400 hover:text-white hover:bg-gray-900'
                         : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
