@@ -27,7 +27,7 @@ export const Projects: React.FC = () => {
     {
       title: "RoR Web Scraper",
       description: "Powerful and efficient web scraping tool designed for rapid data extraction from various websites with advanced parsing capabilities.",
-      image: "https://images.unsplash.com/photo-1522776851755-3914469f0ca2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://images.unsplash.com/photo-1522776851755-3914469f0ca2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==",
       technologies: ["Python", "Web Scraping", "Data Processing", "Automation"],
       github: "https://github.com/merrittcmason/Rob-Web-Scraper.git",
       demo: null
@@ -62,7 +62,7 @@ export const Projects: React.FC = () => {
     }
   ];
 
-  // Auto-scroll functionality for featured projects
+  // Auto-scroll for featured projects
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % featuredProjects.length);
@@ -70,13 +70,8 @@ export const Projects: React.FC = () => {
     return () => clearInterval(timer);
   }, [featuredProjects.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % featuredProjects.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length);
-  };
+  const nextSlide = () => setCurrentSlide((p) => (p + 1) % featuredProjects.length);
+  const prevSlide = () => setCurrentSlide((p) => (p - 1 + featuredProjects.length) % featuredProjects.length);
 
   return (
     <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-[#222222]' : 'bg-gray-50'}`}>
@@ -140,11 +135,8 @@ export const Projects: React.FC = () => {
                         transition={{ delay: 0.4 }}
                         className="flex flex-wrap gap-2 mb-6"
                       >
-                        {featuredProjects[currentSlide].technologies.map((tech, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-crimson text-white text-sm rounded-full"
-                          >
+                        {featuredProjects[currentSlide].technologies.map((tech, i) => (
+                          <span key={i} className="px-3 py-1 bg-crimson text-white text-sm rounded-full">
                             {tech}
                           </span>
                         ))}
@@ -181,36 +173,47 @@ export const Projects: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {/* Carousel Controls */}
-            <button
-              onClick={prevSlide}
-              className={`absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full ${
-                isDarkMode ? 'bg-[#222222] text-white' : 'bg-white text-gray-900'
-              } shadow-lg hover:shadow-xl transition-all duration-300`}
-            >
-              <ChevronLeft size={24} />
-            </button>
+            {/* Bottom controls: chevrons flanking the dots */}
+            <div className="mt-6 flex items-center justify-center gap-3 sm:gap-4">
+              {/* Left chevron */}
+              <button
+                onClick={prevSlide}
+                className={`
+                  p-3 rounded-full shadow-lg transition-all duration-300
+                  ${isDarkMode ? 'bg-[#222222] text-white' : 'bg-white text-gray-900'}
+                  hover:scale-110 hover:shadow-xl
+                `}
+                aria-label="Previous slide"
+              >
+                <ChevronLeft size={24} />
+              </button>
 
-            <button
-              onClick={nextSlide}
-              className={`absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full ${
-                isDarkMode ? 'bg-[#222222] text-white' : 'bg-white text-gray-900'
-              } shadow-lg hover:shadow-xl transition-all duration-300`}
-            >
-              <ChevronRight size={24} />
-            </button>
+              {/* Dots */}
+              <div className="flex items-center gap-2 sm:gap-3">
+                {featuredProjects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentSlide ? 'bg-crimson' : 'bg-[#1d1d1d]'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
 
-            {/* Carousel Indicators */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {featuredProjects.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide ? 'bg-crimson' : 'bg-gray-400'
-                  }`}
-                />
-              ))}
+              {/* Right chevron */}
+              <button
+                onClick={nextSlide}
+                className={`
+                  p-3 rounded-full shadow-lg transition-all duration-300
+                  ${isDarkMode ? 'bg-[#222222] text-white' : 'bg-white text-gray-900'}
+                  hover:scale-110 hover:shadow-xl
+                `}
+                aria-label="Next slide"
+              >
+                <ChevronRight size={24} />
+              </button>
             </div>
           </div>
         </div>
@@ -267,10 +270,7 @@ export const Projects: React.FC = () => {
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-2 py-1 text-xs rounded-full bg-crimson text-white"
-                      >
+                      <span key={techIndex} className="px-2 py-1 text-xs rounded-full bg-crimson text-white">
                         {tech}
                       </span>
                     ))}
