@@ -136,7 +136,7 @@ export const Contact: React.FC = () => {
                       <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                         {link.label}
                       </h4>
-                      <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                         {link.description}
                       </p>
                     </div>
@@ -172,7 +172,7 @@ export const Contact: React.FC = () => {
               Ready to Connect?
             </h2>
 
-            <p className={`text-lg sm:text-xl mb-7 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-lg sm:text-xl mb-7 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Send me a message to discuss your project, ask questions, or just say hello!
             </p>
 

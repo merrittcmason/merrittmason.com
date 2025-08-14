@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
                       location.pathname === item.path
                         ? 'text-crimson'
                         : isDarkMode
-                          ? 'text-gray-300 hover:text-crimson'
+                          ? 'text-white hover:text-crimson'
                           : 'text-gray-900 hover:text-crimson'
                     }`}
                   >
