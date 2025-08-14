@@ -54,7 +54,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-[#222222]' : 'bg-gray-50'}`}>
       {/* Hero Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,7 +101,7 @@ export const About: React.FC = () => {
 
               <motion.p
                 className={`text-xl lg:text-2xl mb-8 leading-relaxed ${
-                  isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                  isDarkMode ? 'text-white' : 'text-gray-900'
                 }`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className={`py-20 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
+      <section id="skills" className={`py-20 ${isDarkMode ? 'bg-[#1d1d1d]' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -162,7 +162,7 @@ export const About: React.FC = () => {
             <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               My Experience
             </h2>
-            <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Strong skills across multiple fields in technology and hardware
             </p>
           </motion.div>
@@ -192,7 +192,7 @@ export const About: React.FC = () => {
                   {skill.items.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
-                      className={`text-sm ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}
+                      className={`text-sm ${isDarkMode ? 'text-white' : 'text-gray-900'}`}
                     >
                       • {item}
                     </li>
@@ -205,7 +205,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Certifications Section */}
-      <section className={`py-20 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-[#1d1d1d]' : 'bg-gray-50'}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

@@ -79,7 +79,7 @@ export const Projects: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-black' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen pt-16 ${isDarkMode ? 'bg-[#222222]' : 'bg-gray-50'}`}>
       {/* Featured Projects Carousel */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -107,7 +107,7 @@ export const Projects: React.FC = () => {
                   exit={{ opacity: 0, x: -300 }}
                   transition={{ duration: 0.5 }}
                   className={`relative h-96 lg:h-[500px] ${
-                    isDarkMode ? 'bg-[#222222]' : 'bg-white'
+                    isDarkMode ? 'bg-[#1d1d1d]' : 'bg-white'
                   } rounded-2xl shadow-2xl overflow-hidden`}
                 >
                   <div className="flex h-full">
@@ -122,13 +122,13 @@ export const Projects: React.FC = () => {
                       >
                         {featuredProjects[currentSlide].title}
                       </motion.h3>
-                      
+
                       <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
                         className={`text-lg mb-6 ${
-                          isDarkMode ? 'text-gray-300' : 'text-gray-600'
+                          isDarkMode ? 'text-white' : 'text-gray-900'
                         }`}
                       >
                         {featuredProjects[currentSlide].description}
@@ -190,7 +190,7 @@ export const Projects: React.FC = () => {
             >
               <ChevronLeft size={24} />
             </button>
-            
+
             <button
               onClick={nextSlide}
               className={`absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full ${
@@ -217,7 +217,7 @@ export const Projects: React.FC = () => {
       </section>
 
       {/* All Projects Grid */}
-      <section className={`py-20 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-[#1d1d1d]' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -229,7 +229,7 @@ export const Projects: React.FC = () => {
             <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Complete Portfolio
             </h2>
-            <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Explore all my projects and technical achievements
             </p>
           </motion.div>
@@ -255,13 +255,13 @@ export const Projects: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className={`text-xl font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                     {project.title}
                   </h3>
-                  
-                  <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+
+                  <p className={`mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                     {project.description}
                   </p>
 
@@ -292,8 +292,8 @@ export const Projects: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`inline-flex items-center px-4 py-2 border-2 border-crimson font-medium rounded-lg transition-colors ${
-                          isDarkMode 
-                            ? 'text-crimson hover:bg-crimson hover:text-white' 
+                          isDarkMode
+                            ? 'text-crimson hover:bg-crimson hover:text-white'
                             : 'text-crimson hover:bg-crimson hover:text-white'
                         }`}
                       >
