@@ -87,7 +87,7 @@ export const Projects: React.FC = () => {
             <h1 className={`text-5xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Featured Projects
             </h1>
-            <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Showcasing the projects I am most proud of
             </p>
           </motion.div>

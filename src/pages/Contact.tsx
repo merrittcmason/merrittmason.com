@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: "Location",
+      label: "Address",
       value: "Charlotte, NC",
       href: "https://maps.google.com/?q=Charlotte,NC"
     }
@@ -56,8 +56,8 @@ export const Contact: React.FC = () => {
             <h1 className={`text-4xl sm:text-5xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Get In Touch
             </h1>
-            <p className={`text-base sm:text-lg mx-auto max-w-3xl mb-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Ready to collaborate? Reach out with questions or project ideas.
+            <p className={`text-base sm:text-lg mx-auto max-w-3xl mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              Ready to collaborate? These are the best ways to reach me.
             </p>
           </motion.div>
         </div>
@@ -96,7 +96,7 @@ export const Contact: React.FC = () => {
                     {info.value}
                   </a>
                 ) : (
-                  <span className={`font-semibold ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <span className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                     {info.value}
                   </span>
                 )}
@@ -136,7 +136,7 @@ export const Contact: React.FC = () => {
                       <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                         {link.label}
                       </h4>
-                      <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                         {link.description}
                       </p>
                     </div>
