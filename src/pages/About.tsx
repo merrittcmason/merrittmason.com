@@ -150,7 +150,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
+      <section id="skills" className={`py-20 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -177,7 +177,7 @@ export const About: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 className={`p-6 rounded-xl shadow-lg transition-all duration-300 ${
-                  isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="flex items-center mb-4">

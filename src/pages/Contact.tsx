@@ -66,7 +66,7 @@ export const Contact: React.FC = () => {
       </section>
 
       {/* Contact Information + Social */}
-      <section className={`py-14 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
+      <section className={`py-14 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
             {contactInfo.map((info, index) => (
@@ -78,7 +78,7 @@ export const Contact: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
                 className={`p-8 rounded-xl shadow-lg text-center transition-all duration-300 ${
-                  isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-crimson rounded-full text-white mb-5">
@@ -157,7 +157,7 @@ export const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className={`p-12 rounded-2xl shadow-2xl ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}
+            className={`p-12 rounded-2xl shadow-2xl ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}
           >
             <motion.div
               initial={{ scale: 0.9 }}
@@ -174,7 +174,7 @@ export const Contact: React.FC = () => {
             </h2>
 
             <p className={`text-lg sm:text-xl mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Let’s talk about how I can help bring your ideas to life with solid software developement and clear delivery.
+              Let's talk about how I can help bring your ideas to life with solid software developement and clear delivery.
             </p>
 
             <motion.a

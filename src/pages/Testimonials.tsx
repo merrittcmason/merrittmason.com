@@ -152,7 +152,7 @@ export const Testimonials: React.FC = () => {
       </section>
 
       {/* Testimonials Grid */}
-      <section className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -164,7 +164,7 @@ export const Testimonials: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
                 className={`p-6 rounded-xl shadow-lg transition-all duration-300 ${
-                 isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-white'
+                 isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="flex items-center mb-4">
@@ -230,7 +230,7 @@ export const Testimonials: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className={`p-8 rounded-xl shadow-lg ${
-              isDarkMode ? 'bg-gray-900' : 'bg-white'
+              isDarkMode ? 'bg-[#222222]' : 'bg-white'
             }`}
           >
             {showSuccess && (
@@ -259,7 +259,7 @@ export const Testimonials: React.FC = () => {
                     errors.name
                       ? 'border-red-500 focus:border-red-500'
                       : isDarkMode
-                        ? 'border-gray-700 bg-gray-800 text-white focus:border-crimson'
+                        ? 'border-[#222222] bg-black text-white focus:border-crimson'
                         : 'border-gray-300 bg-white text-gray-900 focus:border-crimson'
                   } focus:outline-none focus:ring-2 focus:ring-crimson/20`}
                   placeholder="Your full name"
@@ -284,7 +284,7 @@ export const Testimonials: React.FC = () => {
                     errors.website
                       ? 'border-red-500 focus:border-red-500'
                       : isDarkMode
-                       ? 'border-gray-700 bg-gray-800 text-white focus:border-crimson'
+                       ? 'border-[#222222] bg-black text-white focus:border-crimson'
                         : 'border-gray-300 bg-white text-gray-900 focus:border-crimson'
                   } focus:outline-none focus:ring-2 focus:ring-crimson/20`}
                   placeholder="https://yourwebsite.com"
@@ -310,7 +310,7 @@ export const Testimonials: React.FC = () => {
                     errors.testimonial
                       ? 'border-red-500 focus:border-red-500'
                       : isDarkMode
-                       ? 'border-gray-700 bg-gray-800 text-white focus:border-crimson'
+                       ? 'border-[#222222] bg-black text-white focus:border-crimson'
                         : 'border-gray-300 bg-white text-gray-900 focus:border-crimson'
                   } focus:outline-none focus:ring-2 focus:ring-crimson/20`}
                   placeholder="Share your experience working with me..."

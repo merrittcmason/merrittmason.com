@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
   return (
     <footer
       className={`border-t transition-colors duration-300 ${
-        isDarkMode ? 'bg-black border-gray-800' : 'bg-white border-gray-200'
+        isDarkMode ? 'bg-black border-[#222222]' : 'bg-white border-gray-200'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
                     location.pathname === item.path
                       ? 'text-crimson'
                       : isDarkMode
-                        ? 'text-gray-400 hover:text-crimson'
+                        ? 'text-gray-300 hover:text-crimson'
                         : 'text-gray-600 hover:text-crimson'
                   }`}
                 >
@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className={`p-2 rounded-lg transition-colors ${
                     isDarkMode
-                      ? 'text-gray-400 hover:text-crimson hover:bg-gray-900'
+                      ? 'text-gray-300 hover:text-crimson hover:bg-[#222222]'
                       : 'text-gray-600 hover:text-crimson hover:bg-gray-100'
                   }`}
                   aria-label={link.label}
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
         <div
           className={`mt-8 pt-8 border-t text-center text-sm ${
             isDarkMode
-              ? 'border-gray-800 text-gray-400'
+              ? 'border-[#222222] text-gray-300'
               : 'border-gray-200 text-gray-600'
           }`}
         >

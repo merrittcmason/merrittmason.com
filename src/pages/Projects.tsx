@@ -185,7 +185,7 @@ export const Projects: React.FC = () => {
             <button
               onClick={prevSlide}
               className={`absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full ${
-                isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+                isDarkMode ? 'bg-[#222222] text-white' : 'bg-white text-gray-900'
               } shadow-lg hover:shadow-xl transition-all duration-300`}
             >
               <ChevronLeft size={24} />
@@ -194,7 +194,7 @@ export const Projects: React.FC = () => {
             <button
               onClick={nextSlide}
               className={`absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full ${
-                isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+                isDarkMode ? 'bg-[#222222] text-white' : 'bg-white text-gray-900'
               } shadow-lg hover:shadow-xl transition-all duration-300`}
             >
               <ChevronRight size={24} />
@@ -217,7 +217,7 @@ export const Projects: React.FC = () => {
       </section>
 
       {/* All Projects Grid */}
-      <section className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
+      <section className={`py-20 ${isDarkMode ? 'bg-[#222222]' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -244,7 +244,7 @@ export const Projects: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 className={`rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${
-                  isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="relative overflow-hidden">
