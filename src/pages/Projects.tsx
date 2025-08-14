@@ -88,7 +88,7 @@ export const Projects: React.FC = () => {
               Featured Projects
             </h1>
             <p className={`text-xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Showcasing innovative solutions and technical expertise
+              Showcasing the projects I am most proud of
             </p>
           </motion.div>
 
@@ -230,10 +230,10 @@ export const Projects: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className={`text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Complete Portfolio
+              Project Portfolio
             </h2>
             <p className={`text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Explore all my projects and technical achievements
+              Explore a ton of my projects and technical achievements
             </p>
           </motion.div>
 
