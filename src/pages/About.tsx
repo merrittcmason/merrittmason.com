@@ -128,7 +128,7 @@ export const About: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Download size={20} className="mr-2" />
-                  Download Resume
+                  View Resume
                 </motion.a>
 
                 <motion.a

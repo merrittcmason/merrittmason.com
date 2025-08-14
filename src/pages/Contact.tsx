@@ -7,27 +7,26 @@ export const Contact: React.FC = () => {
   const { isDarkMode } = useTheme();
 
   const contactInfo = [
-    {
+   /* {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
       value: "contact@merrittmason.com",
       href: "mailto:contact@merrittmason.com"
     },
+
     {
       icon: <Phone className="w-6 h-6" />,
       label: "Phone",
       value: "+1 (704) 918-5752",
       href: "tel:+17049185752"
     },
-/*
     {
       icon: <MapPin className="w-6 h-6" />,
       label: "Location",
       value: "Charlotte, NC",
       href: "https://maps.google.com/?q=Charlotte,NC"
     }
- */
-
+      */
   ];
 
   const socialLinks = [
@@ -171,11 +170,11 @@ export const Contact: React.FC = () => {
             </motion.div>
 
             <h2 className={`text-3xl sm:text-4xl font-bold mb-5 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Ready to Start Your Project?
+              Want to Contact me Directly?
             </h2>
 
             <p className={`text-lg sm:text-xl mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Let’s talk about how I can help bring your ideas to life with solid engineering and clear delivery.
+              Let’s talk about how I can help bring your ideas to life with solid software developement and clear delivery.
             </p>
 
             <motion.a
