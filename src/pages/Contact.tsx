@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: "Address",
+      label: "Location",
       value: "Charlotte, NC",
       href: "https://maps.google.com/?q=Charlotte,NC"
     }
@@ -44,8 +44,8 @@ export const Contact: React.FC = () => {
 
   return (
     <div className={`${isDarkMode ? 'bg-[#222222]' : 'bg-gray-50'}`}>
-      {/* Header (tightened spacing) */}
-      <section className="pt-16 pb-4">
+      {/* Header (keep top spacing from nav, tighten bottom) */}
+      <section className="pt-24 pb-4">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export const Contact: React.FC = () => {
             <h1 className={`text-4xl sm:text-5xl font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
               Get In Touch
             </h1>
-            <p className={`text-base sm:text-lg mx-auto max-w-3xl ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+            <p className={`text-base sm:text-lg mx-auto max-w-3xl mb-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               Ready to collaborate? Reach out with questions or project ideas.
             </p>
           </motion.div>
@@ -136,7 +136,7 @@ export const Contact: React.FC = () => {
                       <h4 className={`font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                         {link.label}
                       </h4>
-                      <p className={`text-sm ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                      <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                         {link.description}
                       </p>
                     </div>
@@ -148,7 +148,7 @@ export const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* Call to Action (left as-is, but you can tighten if you want) */}
+      {/* Call to Action (unchanged spacing, but easy to tighten if you want) */}
       <section className={`py-16 ${isDarkMode ? 'bg-[#1d1d1d]' : 'bg-gray-50'}`}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -169,11 +169,11 @@ export const Contact: React.FC = () => {
             </motion.div>
 
             <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Ready to Connect?
+              Want to Contact me Directly?
             </h2>
 
-            <p className={`text-lg sm:text-xl mb-7 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-              Send me a message to discuss your project, ask questions, or just say hello!
+            <p className={`text-lg sm:text-xl mb-7 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              Let's talk about how I can help bring your ideas to life with solid software development and clear delivery.
             </p>
 
             <motion.a

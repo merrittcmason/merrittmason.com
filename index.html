@@ -1,10 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"  />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111111" />
+    <meta name="color-scheme" content="dark light" />
     <title>About Me</title>
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var dark =
+            saved === null
+              ? true // default = dark
+              : saved === 'dark'
+                ? true
+                : saved === 'light'
+                  ? false
+                  : JSON.parse(saved) === true;
+
+          var root = document.documentElement;
+          if (dark) {
+            root.classList.add('dark');
+            root.setAttribute('data-theme', 'dark');
+            var tc = document.querySelector('meta[name="theme-color"]');
+            if (tc) tc.setAttribute('content', '#111111');
+          } else {
+            root.classList.remove('dark');
+            root.setAttribute('data-theme', 'light');
+            var tc2 = document.querySelector('meta[name="theme-color"]');
+            if (tc2) tc2.setAttribute('content', '#ffffff');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'dark');
+          var tc3 = document.querySelector('meta[name="theme-color"]');
+          if (tc3) tc3.setAttribute('content', '#111111');
+        }
+      })();
+    </script>
+
+    <style>
+      html.dark { background-color: #111111; }
+      html:not(.dark) { background-color: #ffffff; }
+    </style>
   </head>
   <body>
     <div id="root"></div>
