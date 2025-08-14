@@ -173,7 +173,7 @@ export const Contact: React.FC = () => {
             </h2>
 
             <p className={`text-lg sm:text-xl mb-7 ${isDarkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Let's talk about how I can help bring your ideas to life with solid software development and clear delivery.
+
             </p>
 
             <motion.a
