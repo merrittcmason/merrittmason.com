@@ -69,7 +69,7 @@ export const Navigation: React.FC = () => {
           <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              //onClick={toggleTheme}
+              onClick={toggleTheme}
               className={`p-2 rounded-lg transition-colors ${
                 isDarkMode
                   ? 'text-gray-400 hover:text-white hover:bg-gray-900'
