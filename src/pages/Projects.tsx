@@ -107,7 +107,7 @@ export const Projects: React.FC = () => {
                   exit={{ opacity: 0, x: -300 }}
                   transition={{ duration: 0.5 }}
                   className={`relative h-96 lg:h-[500px] ${
-                    isDarkMode ? 'bg-gray-900' : 'bg-white'
+                    isDarkMode ? 'bg-[#222222]' : 'bg-white'
                   } rounded-2xl shadow-2xl overflow-hidden`}
                 >
                   <div className="flex h-full">
@@ -244,7 +244,7 @@ export const Projects: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 className={`rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${
-                  isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-[#222222] hover:bg-[#333333]' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="relative overflow-hidden">

@@ -78,7 +78,7 @@ export const Contact: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
                 className={`p-8 rounded-xl shadow-lg text-center transition-all duration-300 ${
-                  isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-[#222222] hover:bg-[#333333]' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-crimson rounded-full text-white mb-5">
@@ -127,7 +127,7 @@ export const Contact: React.FC = () => {
                   whileHover={{ scale: 1.06, y: -2 }}
                   whileTap={{ scale: 0.96 }}
                   className={`group p-6 rounded-xl shadow-lg transition-all duration-300 ${
-                    isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-gray-50 hover:bg-white'
+                    isDarkMode ? 'bg-[#222222] hover:bg-[#333333]' : 'bg-gray-50 hover:bg-white'
                   }`}
                   aria-label={link.label}
                 >

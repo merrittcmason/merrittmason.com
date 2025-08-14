@@ -24,7 +24,7 @@ export const Navigation: React.FC = () => {
       animate={{ y: 0 }}
       className={`fixed w-full z-50 backdrop-blur-md border-b transition-all duration-300 ${
         isDarkMode
-          ? 'bg-black/90 border-[#222222]'
+          ? 'bg-[#222222]/90 border-[#222222]'
           : 'bg-white/90 border-gray-200'
       }`}
     >

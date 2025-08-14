@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
   return (
     <footer
       className={`border-t transition-colors duration-300 ${
-        isDarkMode ? 'bg-black border-[#222222]' : 'bg-white border-gray-200'
+        isDarkMode ? 'bg-[#222222] border-[#222222]' : 'bg-white border-gray-200'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

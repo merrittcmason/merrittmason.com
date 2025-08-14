@@ -164,7 +164,7 @@ export const Testimonials: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
                 className={`p-6 rounded-xl shadow-lg transition-all duration-300 ${
-                 isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
+                 isDarkMode ? 'bg-[#222222] hover:bg-[#333333]' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="flex items-center mb-4">

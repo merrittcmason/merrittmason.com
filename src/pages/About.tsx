@@ -177,7 +177,7 @@ export const About: React.FC = () => {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 className={`p-6 rounded-xl shadow-lg transition-all duration-300 ${
-                  isDarkMode ? 'bg-black hover:bg-black/80' : 'bg-gray-50 hover:bg-white'
+                  isDarkMode ? 'bg-[#222222] hover:bg-[#333333]' : 'bg-gray-50 hover:bg-white'
                 }`}
               >
                 <div className="flex items-center mb-4">
@@ -228,7 +228,7 @@ export const About: React.FC = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`p-6 rounded-lg border-l-4 border-crimson ${
-                  isDarkMode ? 'bg-gray-900' : 'bg-white'
+                  isDarkMode ? 'bg-[#222222]' : 'bg-white'
                 } shadow-lg`}
               >
                 <p className={`font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
