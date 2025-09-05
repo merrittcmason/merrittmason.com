@@ -25,11 +25,11 @@ export const About: React.FC = () => {
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Cybersecurity & Networking",
+      title: "IT & Networking",
       items: [
         "Penetration Testing", "Kali Linux",
         "Network Security", "Ethical Hacking",
-        "System Hardening"
+        "System Hardening", "Database Management"
       ]
     },
     {
