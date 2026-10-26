@@ -21,7 +21,7 @@ export default function About() {
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
         <div className="pt-7">
           <TiltCard className="relative rounded-[26px] p-3 shadow-2xl" style={fill("electric")}>
-            <span className="tab absolute bottom-full left-4" style={tab("electric")}>
+            <span className="tab absolute -top-7 left-7" style={tab("electric")}>
               Phoenix, AZ
             </span>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[#06143a]/40">
