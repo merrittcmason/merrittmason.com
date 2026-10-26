@@ -1,0 +1,434 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #03050c;
+  --sheet: #0a1022;
+  --sheet-2: #141c38;
+  --glass: rgba(120, 150, 255, 0.08);
+  --nav: rgba(10, 16, 34, 0.86);
+  --ink: #f2f5ff;
+  --ink-2: #c6d0f0;
+  --muted: #7f8fc0;
+  --line: rgba(130, 160, 255, 0.16);
+  --row: rgba(130, 160, 255, 0.06);
+  --tint: 10%;
+
+  /* Blue spectrum, dark to light */
+  --midnight: #0f1a4d;
+  --navy: #0b2a7a;
+  --duke: #003087;
+  --indigo: #2a3aa8;
+  --cobalt: #1437c8;
+  --royal: #2f5bff;
+  --blue: #2f5bff;
+  --denim: #1560bd;
+  --steel: #2d4a8a;
+  --steelblue: #4682b4;
+  --cerulean: #0b7fc4;
+  --electric: #0a84ff;
+  --cyan: #1aa3f5;
+  --teal: #0e7bbf;
+  --violet: #5b5fe0;
+  --periwinkle: #6f7cff;
+  --carolina: #4b9cd3;
+  --sky: #38bdf8;
+  --aqua: #7dd3fc;
+  --azure: #7cc4ff;
+  --lavender: #b4bdff;
+  --powder: #b0d8f0;
+  --ice: #dbe7ff;
+  --ice-ink: #0f2a6b;
+  --accent: var(--blue);
+  --shadow: 0 40px 80px -50px rgba(0, 0, 0, 0.9);
+}
+
+/* Light theme follows the device setting */
+@media (prefers-color-scheme: light) {
+  :root {
+  --bg: #eef2ff;
+  --sheet: #ffffff;
+  --sheet-2: #e6ecfb;
+  --glass: rgba(47, 91, 255, 0.06);
+  --nav: rgba(255, 255, 255, 0.88);
+  --ink: #0b1020;
+  --ink-2: #2c3552;
+  --muted: #5b6580;
+  --line: rgba(47, 91, 255, 0.14);
+  --row: rgba(47, 91, 255, 0.05);
+  --tint: 7%;
+  --shadow: 0 40px 80px -50px rgba(11, 16, 32, 0.25);
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-blue: var(--blue);
+  --color-accent: var(--accent);
+  --color-sheet-2: var(--sheet-2);
+  --color-royal: var(--royal);
+  --color-cobalt: var(--cobalt);
+  --color-duke: var(--duke);
+  --color-navy: var(--navy);
+  --color-midnight: var(--midnight);
+  --color-indigo: var(--indigo);
+  --color-steel: var(--steel);
+  --color-steelblue: var(--steelblue);
+  --color-denim: var(--denim);
+  --color-cerulean: var(--cerulean);
+  --color-electric: var(--electric);
+  --color-cyan: var(--cyan);
+  --color-teal: var(--teal);
+  --color-violet: var(--violet);
+  --color-periwinkle: var(--periwinkle);
+  --color-carolina: var(--carolina);
+  --color-sky: var(--sky);
+  --color-aqua: var(--aqua);
+  --color-azure: var(--azure);
+  --color-powder: var(--powder);
+  --color-ice: var(--ice);
+  --color-lavender: var(--lavender);
+  --color-ice-ink: var(--ice-ink);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-syncopate);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  html { color-scheme: light; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer components {
+/* Outline display headings */
+.outline {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  line-height: 0.95;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent);
+}
+.outline-ink {
+  color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+}
+
+/* Sheet container */
+.sheet {
+  background:
+    radial-gradient(900px 420px at 85% 0%, color-mix(in oklab, var(--accent) 28%, transparent), transparent 70%),
+    linear-gradient(180deg, color-mix(in oklab, var(--accent) calc(var(--tint) * 1.6), var(--sheet)) 0%, color-mix(in oklab, var(--accent) var(--tint), var(--sheet)) 45%, var(--sheet) 100%);
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--line));
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Mono label */
+.label {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Folder tab with curved shoulders. Set --tab-bg on the element. */
+.tab {
+  --tab-bg: var(--blue);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 12px 12px 0 0;
+  background: var(--tab-bg);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tab::before,
+.tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+}
+.tab::before {
+  left: -12px;
+  background: radial-gradient(circle at 0 0, transparent 11.5px, var(--tab-bg) 12.5px);
+}
+.tab::after {
+  right: -12px;
+  background: radial-gradient(circle at 100% 0, transparent 11.5px, var(--tab-bg) 12.5px);
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.6rem;
+  height: 1.1rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+}
+
+/* Tones (solid fills come from inline styles via src/lib/tones.ts) */
+.tone-blue { background: var(--blue); color: #fff; }
+.tone-accent { background: var(--accent); color: #fff; }
+.tone-sheet2 { background: color-mix(in oklab, var(--accent) 12%, var(--sheet-2)); color: var(--ink); }
+.tone-ocean { background: linear-gradient(180deg, var(--sky) 0%, var(--cerulean) 55%, var(--denim) 100%); color: #fff; }
+.tone-steel-grad { background: linear-gradient(180deg, var(--midnight) 0%, var(--indigo) 50%, var(--violet) 100%); color: #fff; }
+.tone-step-0 { background: linear-gradient(160deg, var(--royal) 0%, var(--denim) 100%); color: #fff; }
+.tone-step-1 { background: linear-gradient(160deg, var(--cerulean) 0%, var(--electric) 100%); color: #fff; }
+.tone-step-2 { background: linear-gradient(160deg, var(--teal) 0%, var(--sky) 100%); color: #fff; }
+.tone-step-3 { background: linear-gradient(160deg, var(--violet) 0%, var(--periwinkle) 100%); color: #fff; }
+.folder-lift {
+  box-shadow: 0 -14px 40px -10px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.28) inset;
+}
+
+/* Big faded numerals */
+.ghost {
+  font-family: var(--font-display), sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+  opacity: 0.4;
+}
+
+/* Motion system */
+:root {
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.fade-up { animation: fade-up 0.45s var(--ease-out) both; }
+
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+.pop-in { animation: pop-in 0.4s var(--ease-spring) both; }
+
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.backdrop-in { animation: backdrop-in 0.3s ease both; }
+
+@keyframes slow-spin {
+  to { transform: rotate(360deg); }
+}
+.slow-spin { animation: slow-spin 90s linear infinite; }
+
+@keyframes tick {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.tick { animation: tick 0.3s var(--ease-out) both; }
+
+/* Hover lifts */
+.lift {
+  transition: transform 0.35s var(--ease-out), rotate 0.5s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+.lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.55);
+}
+.lift-sm {
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), background-color 0.3s ease, border-color 0.3s ease;
+}
+.lift-sm:hover { transform: translateY(-3px); }
+
+/* Cover folders: grow upward on hover, bottom edge stays put. */
+.folder-grow {
+  height: 100%;
+  transition: height 0.35s var(--ease-out), transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+.folder-grow:hover {
+  height: calc(100% + 14px);
+  transform: translateY(-14px);
+  box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.6);
+}
+.folder-grow > .tab { transition: transform 0.35s var(--ease-out); }
+
+/* Contents: stacked folders. Each sits on the one above; hover nudges it up like pulling a file. */
+.folder-stack {
+  box-shadow: 0 -18px 40px -20px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.3s ease;
+}
+.folder-stack-wrap { transition: transform 0.35s var(--ease-out); }
+.folder-stack-wrap:hover { transform: translateY(-6px); }
+
+/* ---- Hover layer: movement only, on the reference's spring curve ---- */
+:root { --spring: cubic-bezier(0.3, 1.3, 0.4, 1); }
+
+/* Section outline titles nudge right only when the title itself is hovered */
+.outline { display: inline-block; transition: transform 0.5s var(--spring); }
+.outline:hover { transform: translateX(8px); }
+
+/* Text that slides right on hover (chapter titles, card titles, headline words) */
+.word-shift, .title-slide { display: inline-block; transition: transform 0.5s var(--spring); }
+.word-shift:hover { transform: translateX(6px); }
+.lift:hover .title-slide,
+.folder-grow:hover .title-slide,
+.folder-stack-wrap:hover .title-slide { transform: translateX(6px); }
+
+/* Inline links nudge right */
+.nudge { display: inline-flex; transition: transform 0.4s var(--spring); }
+.nudge:hover { transform: translateX(4px); }
+
+/* Big display text drifts right */
+.drift { display: inline-block; transition: transform 0.5s var(--spring); }
+.drift:hover { transform: translateX(10px); }
+
+/* Chips and pills pop up */
+.chip, .pill { display: inline-block; transition: transform 0.4s var(--spring); }
+.chip:hover, .pill:hover { transform: translateY(-3px); }
+
+/* Timeline entries rise, dot grows */
+.tl { transition: transform 0.4s var(--spring); }
+.tl:hover { transform: translateY(-4px); }
+.tl .dot { transition: transform 0.4s var(--spring); }
+.tl:hover .dot { transform: scale(1.5); }
+
+/* Monogram in project thumbs scales like the reference's card art */
+.mono-scale { display: inline-block; transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.lift:hover .mono-scale { transform: scale(1.06); }
+
+/* Strip labels rise individually */
+.label-row span { display: inline-block; transition: transform 0.4s var(--spring); }
+.label-row span:hover { transform: translateY(-2px); }
+
+/* Cards and folders use the spring too */
+.lift { transition: transform 0.5s var(--spring), rotate 0.5s var(--spring), box-shadow 0.5s ease; }
+.lift-sm { transition: transform 0.5s var(--spring), box-shadow 0.4s ease, background-color 0.3s ease, border-color 0.3s ease; }
+.folder-grow { transition: height 0.5s var(--spring), transform 0.5s var(--spring), box-shadow 0.5s ease; }
+.folder-stack-wrap { transition: transform 0.5s var(--spring); }
+.thumb-zoom .thumb { transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.nav-link:hover { transform: translateY(-1px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .outline, .word-shift, .title-slide, .nudge, .drift, .chip, .pill, .tl, .tl .dot, .mono-scale, .label-row span { transition: none; }
+  .outline:hover, .word-shift:hover, .nudge:hover, .drift:hover, .chip:hover, .pill:hover, .tl:hover, .tl:hover .dot, .lift:hover .mono-scale, .label-row span:hover, .lift:hover .title-slide, .folder-grow:hover .title-slide, .folder-stack-wrap:hover .title-slide { transform: none; }
+}
+
+.thumb-zoom .thumb { transition: transform 0.5s var(--ease-out); }
+.thumb-zoom:hover .thumb { transform: scale(1.03); }
+
+.tab { transition: transform 0.3s var(--ease-out), background-color 0.3s ease, color 0.3s ease; }
+.lift:hover > .tab { transform: none; }
+
+/* Mobile nav: hide the scrollbar, fade the clipped edges */
+.nav-scroll {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.nav-scroll::-webkit-scrollbar { display: none; }
+@media (max-width: 639px) {
+  .nav-scroll {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 14px), transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 14px), transparent);
+  }
+}
+
+/* Touch devices: no sticky hover states */
+@media (hover: none) {
+  .lift:hover, .lift-sm:hover, .folder-stack-wrap:hover, .word-shift:hover, .nudge:hover, .drift:hover,
+  .chip:hover, .pill:hover, .tl:hover, .outline:hover, .label-row span:hover, .nav-link:hover,
+  .lift:hover .title-slide, .folder-grow:hover .title-slide, .folder-stack-wrap:hover .title-slide,
+  .lift:hover .mono-scale, .thumb-zoom:hover .thumb, .tl:hover .dot { transform: none; box-shadow: none; }
+  .folder-grow:hover { height: 100%; }
+}
+
+.nav-link { position: relative; transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s var(--ease-out); }
+.nav-link:active { transform: scale(0.96); }
+
+.accordion {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s var(--ease-out), opacity 0.4s ease;
+  opacity: 0;
+}
+.accordion.open { grid-template-rows: 1fr; opacity: 1; }
+.accordion > div { overflow: hidden; min-height: 0; }
+
+.bar { transition: background-color 0.3s ease, width 0.4s var(--ease-out); }
+
+/* Contribution graph cells */
+.cell { background: var(--row); }
+.cell[data-level="0"] { background: var(--line); }
+.cell[data-level="1"] { background: color-mix(in oklab, var(--accent) 30%, transparent); }
+.cell[data-level="2"] { background: color-mix(in oklab, var(--accent) 55%, transparent); }
+.cell[data-level="3"] { background: color-mix(in oklab, var(--accent) 80%, transparent); }
+.cell[data-level="4"] { background: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .pop-in, .backdrop-in, .slow-spin, .tick { animation: none; }
+  .lift:hover, .lift-sm:hover, .thumb-zoom:hover .thumb, .folder-stack-wrap:hover { transform: none; }
+  .folder-grow:hover { height: 100%; transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+.btn {
+  display: inline-flex;
+  transition: transform 0.2s var(--ease-out), background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn {
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.btn:active { transform: scale(0.97); }
+
+.ghost-sans {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--muted);
+  opacity: 0.55;
+}
+}
+

@@ -1,0 +1,387 @@
+{
+  "summary": {
+    "health_score": 28,
+    "business_type": "Personal portfolio / individual professional",
+    "top_findings": [
+      "AI crawlers (GPTBot, ClaudeBot, PerplexityBot) receive HTTP 403 from Vercel host-level rule",
+      "Client-rendered SPA: raw HTML is an empty <div id=\"root\"> shell",
+      "Soft 404: every path returns 200 with identical index.html",
+      "Title 'About Me'; no meta description, canonical, Open Graph, or JSON-LD",
+      "2.1 MB PNG hero at 256 px; 9.8 MB PNG publicly served; LCP est. 3-4.5 s mobile"
+    ],
+    "quick_wins": [
+      "Disable Vercel Firewall AI-bot block",
+      "Set metadataBase to www host; add canonical, OG, twitter metadata",
+      "Paste Person/WebSite/ProfilePage JSON-LD into layout.tsx",
+      "Add app/robots.ts and app/sitemap.ts",
+      "Rewrite title and first paragraph as an entity statement (name, role, Charlotte NC)"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 28,
+      "what_works": [
+        "HTTPS + HSTS, single-hop 308 redirects",
+        "viewport, theme-color, lang=en",
+        "1.9 KB shell from Vercel edge"
+      ],
+      "findings": [
+        {
+          "title": "Content client-rendered only",
+          "severity": "Critical",
+          "description": "Raw HTML 1948 bytes, empty #root, no body text",
+          "recommendation": "Server-render in Next.js rebuild"
+        },
+        {
+          "title": "Soft 404 on every path",
+          "severity": "Critical",
+          "description": "/nonexistent-xyz returns 200 with same ETag as /",
+          "recommendation": "not-found.tsx; redirects() for old SPA routes"
+        },
+        {
+          "title": "AI crawlers blocked (403)",
+          "severity": "Critical",
+          "description": "GPTBot/ClaudeBot/PerplexityBot UAs get 403; Googlebot/bingbot 200; robots.txt is 404 so host-level rule",
+          "recommendation": "Vercel Firewall: disable AI Bots managed rule"
+        },
+        {
+          "title": "Weak title, no description",
+          "severity": "High",
+          "description": "<title>About Me</title>, no meta description",
+          "recommendation": "Metadata API: name + role + city title, description, OG, twitter"
+        },
+        {
+          "title": "No canonical / OG",
+          "severity": "High",
+          "description": "Absent from HTML",
+          "recommendation": "alternates.canonical, openGraph with 1200x630 image"
+        },
+        {
+          "title": "metadataBase host mismatch",
+          "severity": "High",
+          "description": "layout.tsx uses apex; live apex 308 -> www",
+          "recommendation": "metadataBase https://www.merrittmason.com"
+        },
+        {
+          "title": "robots.txt 404",
+          "severity": "High",
+          "description": "NOT_FOUND",
+          "recommendation": "src/app/robots.ts"
+        },
+        {
+          "title": "No sitemap",
+          "severity": "High",
+          "description": "/sitemap.xml 404",
+          "recommendation": "src/app/sitemap.ts"
+        },
+        {
+          "title": "Missing security headers",
+          "severity": "Medium",
+          "description": "Only HSTS; ACAO * on HTML",
+          "recommendation": "headers() in next.config.ts: nosniff, Referrer-Policy, X-Frame-Options, Permissions-Policy"
+        },
+        {
+          "title": "No llms.txt",
+          "severity": "Low",
+          "description": "404",
+          "recommendation": "Optional public/llms.txt"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 34,
+      "what_works": [
+        "Real assets: GitHub repos, resume PDF, LinkedIn",
+        "content/profile.md holds strong unpublished material (Coretek 360, AVERASE, NIST 800-88)"
+      ],
+      "findings": [
+        {
+          "title": "Thin content",
+          "severity": "High",
+          "description": "Home ~190 words; /contact ~15; /testimonials ~4",
+          "recommendation": "Bio, experience, education, 100-150 words per project"
+        },
+        {
+          "title": "Current work missing",
+          "severity": "High",
+          "description": "Copy says 'student'; Coretek 360, AVERASE absent",
+          "recommendation": "Lead with current role and products"
+        },
+        {
+          "title": "Weak E-E-A-T",
+          "severity": "High",
+          "description": "No dates, employers, schools, byline, schema",
+          "recommendation": "Dated experience/education; Person schema with sameAs"
+        },
+        {
+          "title": "Vague copy",
+          "severity": "Medium",
+          "description": "'ability to develop my skills showcased in my portfolio'",
+          "recommendation": "One concrete quotable fact per sentence"
+        },
+        {
+          "title": "/testimonials soft 404 with fake scaffolding",
+          "severity": "Medium",
+          "description": "200 with nav text only",
+          "recommendation": "Remove or redirect until real, permissioned quotes exist"
+        },
+        {
+          "title": "Status wording conflict",
+          "severity": "Medium",
+          "description": "profile.md: degrees end 05/2026 + 'seeking internship' vs Product Engineer TBD start; certs lack issuers",
+          "recommendation": "Settle before publishing"
+        },
+        {
+          "title": "No freshness signals",
+          "severity": "Low",
+          "description": "Date fallback 2026-01-01",
+          "recommendation": "Updated <month year>; dateModified"
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 22,
+      "what_works": [
+        "lang=en, viewport, favicon on all routes",
+        "Rendered DOM has resume, GitHub, LinkedIn, mailto links"
+      ],
+      "findings": [
+        {
+          "title": "Generic title on every route",
+          "severity": "High",
+          "description": "'About Me' everywhere",
+          "recommendation": "Merritt Mason | Software Developer and Product Engineer, Charlotte NC"
+        },
+        {
+          "title": "No meta description",
+          "severity": "High",
+          "description": "None on any route",
+          "recommendation": "Per findings/content.md"
+        },
+        {
+          "title": "Heading hierarchy",
+          "severity": "Medium",
+          "description": "Two H1s; 'My Experience' H2 is a skills list",
+          "recommendation": "One H1 name+role; H2 Experience/Projects/Skills/Education/Contact"
+        },
+        {
+          "title": "No branded/local keywords",
+          "severity": "Medium",
+          "description": "'Charlotte', 'software developer' absent from text",
+          "recommendation": "Use in title, H1, intro"
+        },
+        {
+          "title": "Contact page lacks details",
+          "severity": "Medium",
+          "description": "Link labels only; no email text",
+          "recommendation": "Show email, city, resume link"
+        },
+        {
+          "title": "Minimal internal linking",
+          "severity": "Low",
+          "description": "Three nav links",
+          "recommendation": "Cross-link sections and footer"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 5,
+      "what_works": [],
+      "findings": [
+        {
+          "title": "No structured data",
+          "severity": "High",
+          "description": "0 JSON-LD blocks live and in rebuild",
+          "recommendation": "Person + WebSite + ProfilePage @graph (findings/schema.md)"
+        },
+        {
+          "title": "No Person sameAs",
+          "severity": "High",
+          "description": "GitHub/LinkedIn not declared",
+          "recommendation": "sameAs, jobTitle, alumniOf, address"
+        },
+        {
+          "title": "worksFor unconfirmed",
+          "severity": "Medium",
+          "description": "Coretek 360 start date TBD",
+          "recommendation": "Add worksFor once confirmed"
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 62,
+      "what_works": [
+        "TTFB 93 ms, HTTP/2, brotli, edge cache HIT",
+        "No third-party scripts, no web-font requests",
+        "Inline theme script prevents flash"
+      ],
+      "findings": [
+        {
+          "title": "Oversized headshot PNG",
+          "severity": "Critical",
+          "description": "/headshot.PNG 2,119,525 B, 1254x1254, displayed 256 px",
+          "recommendation": "next/image sized, priority; AVIF/WebP"
+        },
+        {
+          "title": "SPA shell delays LCP",
+          "severity": "High",
+          "description": "Content after JS; LCP est. 3-4.5 s mobile",
+          "recommendation": "Server components"
+        },
+        {
+          "title": "Hero entrance animation",
+          "severity": "Medium",
+          "description": "framer-motion opacity 0->1, 0.2 s delay, 0.8 s duration on LCP element",
+          "recommendation": "Do not animate LCP element"
+        },
+        {
+          "title": "JS bundle",
+          "severity": "Medium",
+          "description": "334 KB raw / 112 KB brotli single chunk",
+          "recommendation": "Route splitting; CSS animations"
+        },
+        {
+          "title": "No preload/fetchpriority",
+          "severity": "Medium",
+          "description": "Image discovered after JS",
+          "recommendation": "next/image priority"
+        },
+        {
+          "title": "No lab/field data",
+          "severity": "Info",
+          "description": "PSI rate-limited; no CrUX key",
+          "recommendation": "Re-run after deploy"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 12,
+      "what_works": [
+        "GitHub profile links back with rel=me",
+        "Rendered copy opens with name"
+      ],
+      "findings": [
+        {
+          "title": "AI crawlers 403",
+          "severity": "Critical",
+          "description": "Verified twice",
+          "recommendation": "Vercel Firewall"
+        },
+        {
+          "title": "Empty shell",
+          "severity": "Critical",
+          "description": "Non-JS crawlers see nothing",
+          "recommendation": "SSR"
+        },
+        {
+          "title": "No entity statement",
+          "severity": "High",
+          "description": "No location, university, or role in copy",
+          "recommendation": "One self-contained first sentence"
+        },
+        {
+          "title": "Thin list-style content",
+          "severity": "Medium",
+          "description": "No 130-170 word citable passages",
+          "recommendation": "Prose sections opening with direct answers"
+        },
+        {
+          "title": "No robots.txt / llms.txt",
+          "severity": "Medium",
+          "description": "Both 404",
+          "recommendation": "robots.ts allowing AI bots; optional llms.txt"
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 35,
+      "what_works": [
+        "Hero has alt text",
+        "Rebuild uses next/image with priority on profile.jpg"
+      ],
+      "findings": [
+        {
+          "title": "9.8 MB PNG publicly served",
+          "severity": "High",
+          "description": "/IMG_0344.png 200",
+          "recommendation": "Drop from public/"
+        },
+        {
+          "title": "No OG image",
+          "severity": "High",
+          "description": "No og:image",
+          "recommendation": "app/opengraph-image.tsx"
+        },
+        {
+          "title": "Missing width/height",
+          "severity": "Medium",
+          "description": "<img> lacks dimensions",
+          "recommendation": "next/image"
+        },
+        {
+          "title": "Orphan assets",
+          "severity": "Low",
+          "description": "darkshot1.jpg, Poker.jpeg",
+          "recommendation": "Remove"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Disable Vercel AI-bot block",
+          "Deploy SSR rebuild with not-found.tsx and redirects for old routes",
+          "metadataBase www + canonical + OG + twitter + proper title/description",
+          "Ensure no multi-MB PNGs ship in public/"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "JSON-LD Person/WebSite/ProfilePage",
+          "robots.ts + sitemap.ts; GSC verification and sitemap submit",
+          "Entity sentence + single H1",
+          "Above-fold Resume/GitHub/LinkedIn/email links",
+          "OG image",
+          "Security headers"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Project write-ups with real screenshots",
+          "Experience + Education with dates",
+          "Consistent name/role/location on LinkedIn, GitHub, resume; site URL on all profiles",
+          "Mobile overflow, tap targets, text size fixes"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Re-run PSI/CWV after deploy",
+          "Drift baseline",
+          "GSC Links + Indexing review monthly",
+          "llms.txt, PDF noindex decision"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
