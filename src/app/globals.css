@@ -265,11 +265,13 @@ body {
 
 /* Hover lifts */
 .lift {
-  transition: transform 0.35s var(--ease-out), rotate 0.5s var(--ease-out), box-shadow 0.35s var(--ease-out);
+  transition: transform 0.35s var(--ease-out), rotate 0.5s var(--ease-out);
 }
-.lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.55);
+.lift:hover { transform: translateY(-6px); }
+/* Shadow goes on the card, not the wrapper: the wrapper's box includes the empty space beside the tab. */
+.lift > :not(.tab) { transition: box-shadow 0.5s ease; }
+@media (hover: hover) {
+  .lift:hover > :not(.tab) { box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.55); }
 }
 .lift-sm {
   transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), background-color 0.3s ease, border-color 0.3s ease;
@@ -337,7 +339,7 @@ body {
 .label-row span:hover { transform: translateY(-2px); }
 
 /* Cards and folders use the spring too */
-.lift { transition: transform 0.5s var(--spring), rotate 0.5s var(--spring), box-shadow 0.5s ease; }
+.lift { transition: transform 0.5s var(--spring), rotate 0.5s var(--spring); }
 .lift-sm { transition: transform 0.5s var(--spring), box-shadow 0.4s ease, background-color 0.3s ease, border-color 0.3s ease; }
 .folder-grow { transition: height 0.5s var(--spring), transform 0.5s var(--spring), box-shadow 0.5s ease; }
 .folder-stack-wrap { transition: transform 0.5s var(--spring); }
