@@ -71,7 +71,7 @@ export default function Cover() {
             </a>
             <div className="label mt-3 flex flex-wrap gap-4 text-blue">
               {categories.slice(0, 3).map((c) => (
-                <a key={c.key} href="#work" className="nudge normal-case tracking-normal">
+                <a key={c.key} href={`#work-${c.key}`} className="nudge normal-case tracking-normal">
                   ({c.label})
                 </a>
               ))}
@@ -89,7 +89,7 @@ export default function Cover() {
             return (
               <a
                 key={c.key}
-                href="#work"
+                href={`#work-${c.key}`}
                 className={`folder-grow relative flex flex-col rounded-t-[22px] p-5 pt-6 shadow-xl md:rounded-t-[26px] ${folderClass[c.tone] ?? ""} ${layout[c.key]} ${c.tone === "ocean" || c.tone === "midnight" ? "folder-lift" : ""}`}
                 style={folderClass[c.tone] ? undefined : { background: toneVar(c.tone as ToneName), color: c.tone === "powder" || c.tone === "carolina" ? "#06143a" : "#fff" }}
               >

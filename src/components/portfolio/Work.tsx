@@ -34,6 +34,22 @@ export default function Work({ intro }: { intro?: ReactNode }) {
   const list = filter === "all" ? projects : projects.filter((p) => p.category === filter);
   const open = openIdx === null ? null : list[openIdx];
 
+  // Hero folders link to #work-<category>: pick that filter, then scroll to the section.
+  useEffect(() => {
+    const apply = () => {
+      const m = /^#work-([a-z]+)$/.exec(window.location.hash);
+      if (!m) return;
+      const key = m[1];
+      if (!categories.some((c) => c.key === key)) return;
+      setFilter(key as CategoryKey);
+      setOpenIdx(null);
+      document.getElementById("work")?.scrollIntoView({ block: "start" });
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+    return () => window.removeEventListener("hashchange", apply);
+  }, []);
+
   useEffect(() => {
     if (openIdx === null) return;
     const onKey = (e: KeyboardEvent) => {
