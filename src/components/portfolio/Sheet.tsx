@@ -10,7 +10,7 @@ type Props = {
   title: string;
   count?: string;
   aside?: string;
-  intro?: string;
+  intro?: ReactNode;
   strip?: boolean;
   children: ReactNode;
   className?: string;
@@ -70,11 +70,13 @@ export default function Sheet({ id, index, total, name, title, count, aside, int
       <Corners />
       <div className="px-5 pb-8 pt-5 sm:px-10 sm:pb-14 sm:pt-6">
         <SheetTitle title={title} count={count} aside={aside} />
-        {intro && (
+        {intro && (typeof intro === "string" ? (
           <p className="mb-10 max-w-md text-sm leading-relaxed text-muted">
             {intro}
           </p>
-        )}
+        ) : (
+          <div className="mb-10">{intro}</div>
+        ))}
         {children}
       </div>
     </section>

@@ -8,6 +8,8 @@ import Process from "@/components/portfolio/Process";
 import Credentials from "@/components/portfolio/Credentials";
 import Contact from "@/components/portfolio/Contact";
 import Footer from "@/components/portfolio/Footer";
+import { Suspense } from "react";
+import { ContributionGraph, ContributionGraphSkeleton } from "@/components/portfolio/ContributionGraph";
 
 export default function Home() {
   return (
@@ -18,7 +20,13 @@ export default function Home() {
         <Cover />
         <Contents />
         <About />
-        <Work />
+        <Work
+          intro={
+            <Suspense fallback={<ContributionGraphSkeleton />}>
+              <ContributionGraph />
+            </Suspense>
+          }
+        />
         <Process />
         <Credentials />
         <Contact />

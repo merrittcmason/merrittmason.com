@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, type ReactNode } from "react";
 import { categories, projects, sections, type CategoryKey, type Project } from "@/data/site";
 import Sheet from "./Sheet";
 import { cycle, fill, tab, toneInk, toneVar, type ToneName } from "@/lib/tones";
@@ -28,7 +28,7 @@ function Thumb({ p }: { p: Project }) {
   );
 }
 
-export default function Work() {
+export default function Work({ intro }: { intro?: ReactNode }) {
   const [filter, setFilter] = useState<"all" | CategoryKey>("all");
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const list = filter === "all" ? projects : projects.filter((p) => p.category === filter);
@@ -58,7 +58,7 @@ export default function Work() {
       title="Works"
       count={`(${String(projects.length).padStart(2, "0")})`}
       aside="(Projects)"
-      intro="Filter the cabinet by folder. Open any file for its details; arrow keys page through."
+      intro={intro}
     >
       <div className="relative flex flex-wrap items-end gap-2 border-b-[6px] pl-6 pr-2 transition-colors duration-500" style={{ borderColor: toneVar(filterTone[filter]) }}>
         {[{ key: "all" as const, label: "All" }, ...categories].map((c) => {

@@ -4,8 +4,6 @@ import Image from "next/image";
 import TiltCard from "./TiltCard";
 import Linkify from "./Linkify";
 import { fill, tab, toneVar, type ToneName } from "@/lib/tones";
-import { Suspense } from "react";
-import { ContributionGraph, ContributionGraphSkeleton } from "./ContributionGraph";
 
 const socials: { k: string; label: string; value: string; href: string; tone: ToneName }[] = [
   { k: "G", label: "GitHub", value: "github.com/merrittcmason", href: site.github, tone: "duke" },
@@ -81,12 +79,6 @@ export default function About() {
               );
             })}
           </ol>
-
-          <div className="mt-12">
-            <Suspense fallback={<ContributionGraphSkeleton />}>
-              <ContributionGraph />
-            </Suspense>
-          </div>
 
           <hr className="my-8 border-line" />
           <ul className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
