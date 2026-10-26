@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { categories, projects, sections, type CategoryKey, type Project } from "@/data/site";
 import Sheet from "./Sheet";
 import { cycle, fill, tab, toneInk, toneVar, type ToneName } from "@/lib/tones";
+import Linkify from "./Linkify";
 
 const filterTone: Record<string, ToneName> = { all: "cobalt", products: "duke", ai: "carolina", web: "powder", tools: "cyan", software: "midnight" };
 
@@ -143,13 +144,13 @@ export default function Work() {
               <Thumb p={open} />
               <div>
                 <h3 className="text-3xl font-bold leading-tight">{open.title}</h3>
-                <p className="mt-1 opacity-80">{open.subtitle}</p>
-                <p className="mt-5 text-sm leading-relaxed opacity-90">{open.description}</p>
+                <p className="mt-1 opacity-80"><Linkify text={open.subtitle} /></p>
+                <p className="mt-5 text-sm leading-relaxed opacity-90"><Linkify text={open.description} /></p>
                 <ul className="mt-4 space-y-1.5 text-sm">
                   {open.bullets.map((b) => (
                     <li key={b} className="flex gap-2">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-current" />
-                      {b}
+                      <Linkify text={b} />
                     </li>
                   ))}
                 </ul>

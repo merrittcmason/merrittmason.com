@@ -4,6 +4,7 @@ import { useState } from "react";
 import { sections, site } from "@/data/site";
 import Sheet from "./Sheet";
 import { cycle, fill, tab, toneVar } from "@/lib/tones";
+import Linkify from "./Linkify";
 
 const tiles = [
   { label: "GitHub", value: "github.com/merrittcmason", href: site.github },
@@ -29,7 +30,7 @@ export default function Contact() {
         <div className="rounded-[26px] px-6 pb-24 pt-8 sm:px-12 sm:pb-32 sm:pt-10" style={fill("royal")}>
           <p className="drift font-display text-[clamp(2.4rem,8vw,6.5rem)] font-bold leading-none tracking-wide">LET&apos;S TALK.</p>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/80">
-            Product engineer at Coretek 360, building AVERASE on the side. Open to interesting problems, collaborations, and coffee.
+            <Linkify text="Product engineer at Coretek 360, building AVERASE on the side. Open to interesting problems, collaborations, and coffee." />
           </p>
         </div>
       </div>

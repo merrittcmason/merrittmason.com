@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { chapters, sections, site } from "@/data/site";
 import Sheet from "./Sheet";
 import { fill, tab, toneInk, type ToneName } from "@/lib/tones";
+import Linkify from "./Linkify";
 
 const chapterTones: ToneName[] = ["royal", "carolina", "teal", "periwinkle", "electric"];
 
@@ -67,7 +68,7 @@ export default function Contents() {
                       {ch.points.map((p) => (
                         <li key={p} className="flex items-center gap-2">
                           <span className="h-2 w-2 rounded-full border border-current opacity-80" />
-                          {p}
+                          <Linkify text={p} />
                         </li>
                       ))}
                     </ul>

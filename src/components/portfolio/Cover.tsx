@@ -1,6 +1,7 @@
 import { site, categories, projects, sections } from "@/data/site";
 import { Strip, Corners } from "./Sheet";
 import { SECTION_TONE, tab, toneVar, type ToneName } from "@/lib/tones";
+import Linkify from "./Linkify";
 
 const layout: Record<string, string> = {
   products: "md:col-start-1 md:col-end-6 md:row-start-1 md:row-end-4 z-10",
@@ -75,7 +76,7 @@ export default function Cover() {
                 </a>
               ))}
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-muted">{site.bio}</p>
+            <p className="mt-4 text-sm leading-relaxed text-muted"><Linkify text={site.bio} /></p>
           </div>
         </div>
       </div>

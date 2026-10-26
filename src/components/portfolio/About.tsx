@@ -2,6 +2,7 @@ import { site, aboutTags, experience, sections } from "@/data/site";
 import Sheet from "./Sheet";
 import Image from "next/image";
 import TiltCard from "./TiltCard";
+import Linkify from "./Linkify";
 import { fill, tab, toneVar, type ToneName } from "@/lib/tones";
 import { Suspense } from "react";
 import { ContributionGraph, ContributionGraphSkeleton } from "./ContributionGraph";
@@ -18,11 +19,11 @@ export default function About() {
   return (
     <Sheet id="about" index={3} total={sections.length} name="About me" title="About me" count={`#${first}`} aside="(Profile)">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
-        <div className="relative pt-7">
-          <span className="tab absolute left-7 top-0" style={tab("electric")}>
-            {site.initials} · {first}
-          </span>
-          <TiltCard className="rounded-[26px] p-3 shadow-2xl" style={fill("electric")}>
+        <div className="pt-7">
+          <TiltCard className="relative rounded-[26px] p-3 shadow-2xl" style={fill("electric")}>
+            <span className="tab absolute bottom-full left-4" style={tab("electric")}>
+              Phoenix, AZ
+            </span>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[#06143a]/40">
               <Image src="/profile.jpg" alt={`${site.name}`} fill sizes="(min-width:1024px) 30vw, 90vw" className="object-cover" priority />
             </div>
@@ -40,7 +41,7 @@ export default function About() {
             <span className="text-2xl font-medium text-muted">{last}</span>
           </h3>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
-            {site.bio}
+            <Linkify text={site.bio} />
           </p>
 
           <div className="mt-8 grid gap-8 sm:grid-cols-3">
@@ -53,7 +54,7 @@ export default function About() {
                   {t.points.map((p) => (
                     <li key={p} className="flex gap-2">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: toneVar(tagTones[i]) }} />
-                      {p}
+                      <Linkify text={p} />
                     </li>
                   ))}
                 </ul>
@@ -75,7 +76,7 @@ export default function About() {
                     }`}
                   />
                   <span className="mt-4 block font-semibold">{e.role}</span>
-                  <span className="block text-sm text-muted">{e.org}</span>
+                  <span className="block text-sm text-muted"><Linkify text={e.org} /></span>
                 </li>
               );
             })}
